@@ -1,0 +1,217 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AgroLucro | Gestão Rural</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="script.js" defer></script>
+</head>
+<body>
+
+  <!-- LOGIN -->
+  <section id="login" class="auth">
+    <form id="loginForm" class="auth-card">
+      <h1>Agro<span>Lucro</span></h1>
+      <p>Gestão financeira da sua propriedade rural</p>
+      <label>E-mail</label>
+      <input id="loginEmail" type="email" required placeholder="seu@email.com">
+      <label>Senha</label>
+      <input id="loginPassword" type="password" required placeholder="Sua senha">
+      <button type="submit">Entrar</button>
+      <p>Não tem conta? <a href="#" id="goRegister">Cadastre-se</a></p>
+      <small>Protótipo acadêmico: use qualquer e-mail e senha.</small>
+    </form>
+  </section>
+
+  <!-- CADASTRO -->
+  <section id="register" class="auth hidden">
+    <form id="registerForm" class="auth-card">
+      <h1>Agro<span>Lucro</span></h1>
+      <p>Crie seu acesso demonstrativo</p>
+      <label>Nome</label>
+      <input id="registerName" required placeholder="Seu nome">
+      <label>E-mail</label>
+      <input id="registerEmail" type="email" required placeholder="seu@email.com">
+      <label>Senha</label>
+      <input id="registerPassword" type="password" minlength="4" required placeholder="Mínimo de 4 caracteres">
+      <button type="submit">Criar conta</button>
+      <p>Já tem conta? <a href="#" id="goLogin">Voltar ao login</a></p>
+    </form>
+  </section>
+
+  <!-- SISTEMA -->
+  <div id="app" class="layout hidden">
+    <aside class="sidebar">
+      <h2>Agro<span>Lucro</span></h2>
+      <p class="menu-label">MENU PRINCIPAL</p>
+      <button data-page="dashboard" class="nav active">Dashboard</button>
+      <button data-page="movement" class="nav">Nova movimentação</button>
+      <button data-page="history" class="nav">Histórico</button>
+      <button data-page="reports" class="nav">Relatórios</button>
+      <button data-page="charts" class="nav">Gráficos detalhados</button>
+      <button data-page="overview" class="nav">Visão geral</button>
+      <button data-page="settings" class="nav">Configurações</button>
+      <button id="logout" class="nav logout">Sair da conta</button>
+      <div class="sidebar-footer">Gestão inteligente<br>para o campo.</div>
+    </aside>
+
+    <main class="content">
+      <header class="topbar">
+        <div>
+          <h1 id="pageTitle">Dashboard</h1>
+          <p>Controle financeiro da sua propriedade rural.</p>
+        </div>
+        <div class="user-info"><span class="avatar">A</span><span id="userName">Agricultor</span></div>
+      </header>
+
+      <!-- TELA 3: DASHBOARD -->
+      <section id="page-dashboard" class="page">
+        <div class="cards">
+          <article class="card"><p>Saldo atual</p><h2 id="balance">R$ 0,00</h2><small>Saldo acumulado</small></article>
+          <article class="card"><p>Total de entradas</p><h2 id="income">R$ 0,00</h2><small class="green">Receitas registradas</small></article>
+          <article class="card"><p>Total de saídas</p><h2 id="expense">R$ 0,00</h2><small class="red">Despesas registradas</small></article>
+        </div>
+        <div class="grid-two">
+          <article class="panel">
+            <div class="panel-heading"><h3>Resumo financeiro</h3><button class="text-button" data-go="reports">Ver relatório</button></div>
+            <canvas id="dashboardChart"></canvas>
+          </article>
+          <article class="panel">
+            <h3>Ações rápidas</h3>
+            <p class="muted">Registre suas operações rurais.</p>
+            <button class="primary full" data-go="movement">+ Nova movimentação</button>
+            <button class="secondary full" data-go="history">Consultar histórico</button>
+            <button class="secondary full" data-go="charts">Ver gráficos</button>
+          </article>
+        </div>
+        <article class="panel">
+          <h3>Movimentações recentes</h3>
+          <div class="table-wrap"><table><thead><tr><th>Descrição</th><th>Categoria</th><th>Data</th><th>Valor</th></tr></thead><tbody id="recentRows"></tbody></table></div>
+        </article>
+      </section>
+
+      <!-- TELA 4: NOVA MOVIMENTAÇÃO -->
+      <section id="page-movement" class="page hidden">
+        <article class="panel form-panel">
+          <h2 id="movementHeading">Nova movimentação</h2>
+          <p class="muted">Informe os dados da receita ou despesa.</p>
+          <form id="movementForm">
+            <input type="hidden" id="movementId">
+            <label>Descrição</label>
+            <input id="description" required placeholder="Ex.: Venda de milho">
+            <div class="form-grid">
+              <div><label>Tipo</label><select id="type"><option value="entrada">Entrada (receita)</option><option value="saida">Saída (despesa)</option></select></div>
+              <div><label>Valor (R$)</label><input id="amount" type="number" min="0.01" step="0.01" required placeholder="0,00"></div>
+              <div><label>Categoria</label><select id="category"><option>Vendas agrícolas</option><option>Insumos</option><option>Equipamentos</option><option>Combustível</option><option>Mão de obra</option><option>Manutenção</option><option>Outros</option></select></div>
+              <div><label>Data</label><input id="date" type="date" required></div>
+            </div>
+            <label>Observações</label>
+            <textarea id="notes" rows="3" placeholder="Informações adicionais (opcional)"></textarea>
+            <div class="actions"><button type="submit" class="primary">Salvar movimentação</button><button type="button" id="cancelEdit" class="secondary">Cancelar</button></div>
+          </form>
+        </article>
+      </section>
+
+      <!-- TELA 5: HISTÓRICO -->
+      <section id="page-history" class="page hidden">
+        <article class="panel">
+          <div class="panel-heading"><div><h2>Histórico financeiro</h2><p class="muted">Consulte e gerencie seus lançamentos.</p></div><button class="primary" data-go="movement">+ Adicionar</button></div>
+          <div class="filters">
+            <input id="search" placeholder="Buscar descrição ou categoria...">
+            <select id="filterType"><option value="">Todos os tipos</option><option value="entrada">Entradas</option><option value="saida">Saídas</option></select>
+            <input id="filterDate" type="month" title="Filtrar por mês">
+            <button id="clearFilters" class="secondary">Limpar</button>
+          </div>
+          <div class="table-wrap"><table><thead><tr><th>Descrição</th><th>Categoria</th><th>Data</th><th>Tipo</th><th>Valor</th><th>Ações</th></tr></thead><tbody id="historyRows"></tbody></table></div>
+          <p id="historyCount" class="muted"></p>
+        </article>
+      </section>
+
+      <!-- TELA 6: RELATÓRIOS -->
+      <section id="page-reports" class="page hidden">
+        <div class="cards">
+          <article class="card"><p>Entradas</p><h2 id="reportIncome">R$ 0,00</h2></article>
+          <article class="card"><p>Saídas</p><h2 id="reportExpense">R$ 0,00</h2></article>
+          <article class="card"><p>Resultado</p><h2 id="reportBalance">R$ 0,00</h2></article>
+        </div>
+        <article class="panel">
+          <h2>Relatório de movimentações</h2>
+          <p class="muted">O relatório considera os lançamentos registrados no sistema.</p>
+          <div class="actions">
+            <button id="exportCSV" class="primary">Exportar CSV</button>
+            <button class="secondary" data-go="history">Ver lançamentos</button>
+          </div>
+          <div class="table-wrap"><table><thead><tr><th>Descrição</th><th>Tipo</th><th>Categoria</th><th>Data</th><th>Valor</th></tr></thead><tbody id="reportRows"></tbody></table></div>
+        </article>
+      </section>
+
+      <!-- TELA 7: CONFIGURAÇÕES -->
+      <section id="page-settings" class="page hidden">
+        <article class="panel form-panel">
+          <h2>Configurações</h2>
+          <p class="muted">Personalize os dados da sua propriedade.</p>
+          <form id="settingsForm">
+            <label>Nome do produtor ou propriedade</label>
+            <input id="farmName" required placeholder="Ex.: Fazenda Boa Esperança">
+            <label>Moeda</label>
+            <select id="currency"><option value="BRL">Real brasileiro (R$)</option></select>
+            <label>Meta mensal de receitas (R$)</label>
+            <input id="goal" type="number" min="0" step="0.01" placeholder="Ex.: 10000">
+            <button class="primary" type="submit">Salvar configurações</button>
+          </form>
+          <hr>
+          <h3>Dados do sistema</h3>
+          <p class="muted">Seus dados ficam armazenados neste navegador.</p>
+          <button id="resetData" class="danger">Apagar todas as movimentações</button>
+        </article>
+      </section>
+
+      <!-- TELA 8: GRÁFICOS -->
+      <section id="page-charts" class="page hidden">
+        <div class="grid-two">
+          <article class="panel"><h3>Entradas x Saídas</h3><canvas id="comparisonChart"></canvas></article>
+          <article class="panel"><h3>Despesas por categoria</h3><canvas id="categoryChart"></canvas></article>
+        </div>
+        <article class="panel"><h3>Resultado mensal</h3><canvas id="monthlyChart"></canvas></article>
+      </section>
+
+      <!-- TELA 9: CONFIRMAÇÃO DE EXCLUSÃO -->
+      <section id="page-delete" class="page hidden">
+        <article class="panel confirm-panel">
+          <div class="warning-icon">!</div>
+          <h2>Confirmar exclusão</h2>
+          <p>Tem certeza de que deseja excluir esta movimentação?</p>
+          <p id="deleteDescription" class="muted"></p>
+          <div class="actions centered">
+            <button id="confirmDelete" class="danger">Sim, excluir</button>
+            <button id="cancelDelete" class="secondary">Cancelar</button>
+          </div>
+        </article>
+      </section>
+
+      <!-- TELA 10: VISÃO GERAL -->
+      <section id="page-overview" class="page hidden">
+        <div class="cards">
+          <article class="card"><p>Saldo acumulado</p><h2 id="overviewBalance">R$ 0,00</h2></article>
+          <article class="card"><p>Quantidade de registros</p><h2 id="totalCount">0</h2></article>
+          <article class="card"><p>Meta mensal</p><h2 id="overviewGoal">R$ 0,00</h2></article>
+        </div>
+        <article class="panel">
+          <h2>Desempenho da propriedade</h2>
+          <p id="goalStatus" class="muted">Cadastre suas movimentações para acompanhar seu desempenho.</p>
+          <div class="progress"><div id="goalProgress"></div></div>
+          <div class="panel-heading"><h3>Distribuição financeira</h3><button class="secondary" data-go="reports">Abrir relatórios</button></div>
+          <div class="table-wrap"><table><thead><tr><th>Indicador</th><th>Valor</th></tr></thead><tbody id="overviewRows"></tbody></table></div>
+        </article>
+      </section>
+
+      <footer>AgroLucro © 2026 — Projeto acadêmico de gestão rural</footer>
+    </main>
+  </div>
+
+  <div id="toast" class="toast hidden"></div>
+</body>
+</html>

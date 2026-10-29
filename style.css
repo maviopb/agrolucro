@@ -1,0 +1,1334 @@
+
+/* =====================================================
+   PROJETO: AGROLUCRO
+   ARQUIVO: style.css
+   DESCRIÇÃO: Estilização do sistema de gestão rural
+
+   ORGANIZAÇÃO:
+   01 - Fontes e variáveis
+   02 - Configurações gerais
+   03 - Login e cadastro
+   04 - Estrutura e menu lateral
+   05 - Conteúdo principal
+   06 - Dashboard e cartões
+   07 - Painéis e gráficos
+   08 - Botões
+   09 - Formulários
+   10 - Histórico e tabelas
+   11 - Exclusão e visão geral
+   12 - Notificações e rodapé
+   13 - Responsividade
+===================================================== */
+
+
+/* =====================================================
+   01 - FONTES E VARIÁVEIS
+===================================================== */
+
+/* Importa duas famílias de fontes do Google Fonts.
+   DM Sans: textos e formulários.
+   Plus Jakarta Sans: títulos e destaques. */
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
+
+/* :root armazena variáveis globais.
+   Podemos reutilizar essas cores em todo o CSS
+   usando a função var(). */
+
+:root {
+  --forest: #064c36;       /* Verde principal */
+  --forest-dark: #033a2a;  /* Verde mais escuro */
+  --green: #087c50;        /* Verde dos botões */
+  --lime: #a8db54;         /* Verde-limão */
+  --mint: #eaf8f0;         /* Verde muito claro */
+
+  --red: #e34c55;          /* Vermelho das despesas */
+  --red-light: #fff0f1;    /* Fundo vermelho claro */
+
+  --ink: #182d30;          /* Cor dos textos */
+  --muted: #75878b;        /* Textos secundários */
+  --line: #e4ebed;         /* Bordas */
+
+  --surface: #ffffff;      /* Fundo dos cartões */
+  --bg: #f4f8f9;           /* Fundo da aplicação */
+
+  /* Sombra suave dos cartões */
+  --shadow: 0 8px 30px rgba(16, 63, 53, 0.055);
+
+  /* Arredondamento padrão */
+  --radius: 13px;
+}
+
+
+/* =====================================================
+   02 - CONFIGURAÇÕES GERAIS
+===================================================== */
+
+/* Seleciona todos os elementos da página.
+   border-box faz largura e altura incluírem
+   padding e bordas. */
+* {
+  box-sizing: border-box;
+}
+
+/* Permite rolagem suave da página. */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Define a aparência principal do documento. */
+body {
+  margin: 0;                /* Remove margem padrão */
+  background: var(--bg);    /* Fundo cinza-claro */
+  color: var(--ink);        /* Cor dos textos */
+
+  /* Tamanho, altura da linha e fonte */
+  font: 14px/1.5 'DM Sans', sans-serif;
+}
+
+/* Faz campos e botões herdarem a fonte do body. */
+button,
+input,
+select,
+textarea {
+  font: inherit;
+}
+
+/* Configuração geral dos botões. */
+button {
+  cursor: pointer; /* Cursor de mão */
+
+  /* Animações suaves */
+  transition:
+    background .2s,
+    transform .2s,
+    box-shadow .2s;
+}
+
+/* Quando o botão é pressionado,
+   ele se move um pixel para baixo. */
+button:active {
+  transform: translateY(1px);
+}
+
+/* Estilo dos links. */
+a {
+  color: var(--green);
+  font-weight: 700;
+  text-decoration: none;
+}
+
+/* Mostra sublinhado ao passar o mouse. */
+a:hover {
+  text-decoration: underline;
+}
+
+/* Remove a margem superior padrão. */
+h1,
+h2,
+h3,
+p {
+  margin-top: 0;
+}
+
+/* Estiliza os títulos do sistema. */
+h1,
+h2,
+h3 {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+
+  /* Aproxima levemente as letras */
+  letter-spacing: -.035em;
+}
+
+/* Tamanhos dos títulos. */
+h1 {
+  font-size: 27px;
+}
+
+h2 {
+  font-size: 20px;
+}
+
+h3 {
+  font-size: 15px;
+}
+
+/* Esconde elementos.
+   !important dá prioridade a esta regra.
+   O JavaScript poderá adicionar ou remover
+   a classe hidden para trocar de tela. */
+.hidden {
+  display: none !important;
+}
+
+/* Classes auxiliares para cores de texto. */
+.muted {
+  color: var(--muted);
+}
+
+.green {
+  color: var(--green);
+}
+
+.red {
+  color: var(--red);
+}
+
+
+/* =====================================================
+   03 - TELA DE LOGIN E CADASTRO
+===================================================== */
+
+/* Container principal das telas de autenticação. */
+.auth {
+  min-height: 100vh; /* Altura mínima da janela */
+
+  /* Flexbox organiza os elementos */
+  display: flex;
+
+  /* Centraliza horizontalmente */
+  justify-content: center;
+
+  /* Centraliza verticalmente */
+  align-items: center;
+
+  /* Espaçamento interno */
+  padding: 32px 18px;
+
+  /* Combina um gradiente radial com um linear
+     para criar um fundo suave. */
+  background:
+    radial-gradient(
+      circle at 18% 22%,
+      rgba(147, 215, 96, .23),
+      transparent 34%
+    ),
+    linear-gradient(
+      135deg,
+      #e8f3ee 0%,
+      #f9fbfc 58%,
+      #eaf2f3 100%
+    );
+}
+
+/* Cartão branco que contém o formulário. */
+.auth-card {
+  position: relative;
+
+  /* Usa 100% da largura disponível,
+     mas não ultrapassa 430px. */
+  width: min(100%, 430px);
+
+  background: white;
+  border: 1px solid #e7eeeb;
+  border-radius: 19px;
+
+  /* Espaço interno do cartão */
+  padding: 44px 42px;
+
+  /* Sombra para dar profundidade */
+  box-shadow: 0 20px 65px rgba(4, 57, 40, .12);
+}
+
+/* ::before cria um elemento visual antes
+   do conteúdo do cartão, sem precisar
+   adicionar outro elemento no HTML. */
+.auth-card::before {
+  content: '✦';
+
+  /* Grid permite centralizar o símbolo */
+  display: grid;
+  place-items: center;
+
+  width: 48px;
+  height: 48px;
+
+  margin-bottom: 19px;
+  border-radius: 14px;
+
+  background: linear-gradient(
+    145deg,
+    var(--forest),
+    var(--green)
+  );
+
+  color: var(--lime);
+  font-size: 27px;
+}
+
+/* Nome AgroLucro no login e cadastro. */
+.auth-card h1 {
+  margin-bottom: 5px;
+  color: var(--forest);
+  font-size: 31px;
+}
+
+/* Aplica verde-claro somente ao span
+   presente dentro do título. */
+.auth-card h1 span,
+.sidebar h2 span {
+  color: #75bd57;
+}
+
+/* Seleciona o primeiro parágrafo diretamente
+   dentro do cartão. */
+.auth-card > p:first-of-type {
+  color: var(--muted);
+  margin-bottom: 26px;
+}
+
+/* Rótulos dos campos de autenticação. */
+.auth-card label {
+  display: block;
+  font-weight: 700;
+  font-size: 12px;
+  margin: 15px 0 7px;
+}
+
+/* Campos de e-mail, senha e nome. */
+.auth-card input {
+  width: 100%;
+  height: 46px;
+}
+
+/* Botão de entrar ou cadastrar. */
+.auth-card button {
+  width: 100%;
+  margin-top: 23px;
+
+  background: linear-gradient(
+    95deg,
+    var(--forest),
+    var(--green)
+  );
+
+  color: white;
+  border: 0;
+  border-radius: 8px;
+  padding: 13px;
+  font-weight: 700;
+}
+
+/* Efeito ao passar o mouse no botão. */
+.auth-card button:hover {
+  box-shadow: 0 6px 16px #087c5040;
+}
+
+/* Parágrafos inferiores, como:
+   "Não tem conta? Cadastre-se". */
+.auth-card p:not(:first-of-type) {
+  text-align: center;
+  margin: 20px 0 10px;
+  font-size: 12px;
+}
+
+/* Texto pequeno de observação. */
+.auth-card small {
+  display: block;
+  color: #9aa9aa;
+  text-align: center;
+  font-size: 11px;
+}
+
+
+/* =====================================================
+   04 - ESTRUTURA PRINCIPAL E MENU LATERAL
+===================================================== */
+
+/* Organiza o menu lateral e o conteúdo
+   principal lado a lado. */
+.layout {
+  min-height: 100vh;
+  display: flex;
+}
+
+/* Menu lateral de navegação. */
+.sidebar {
+  /* Mantém o menu visível durante a rolagem */
+  position: sticky;
+  top: 0;
+
+  /* Ocupa toda a altura da janela */
+  height: 100vh;
+
+  /* Largura fixa do menu */
+  width: 244px;
+
+  /* Impede que o flexbox reduza a largura */
+  flex: 0 0 244px;
+
+  /* Fundo com três tonalidades de verde */
+  background: linear-gradient(
+    160deg,
+    #075b3f 0%,
+    #03402d 55%,
+    #022f23 100%
+  );
+
+  color: #fff;
+  padding: 28px 16px;
+
+  /* Organiza os elementos verticalmente */
+  display: flex;
+  flex-direction: column;
+}
+
+/* Título AgroLucro no menu. */
+.sidebar h2 {
+  font-size: 22px;
+  padding: 0 13px;
+  margin: 6px 0 42px;
+  color: white;
+}
+
+/* Símbolo decorativo antes do nome. */
+.sidebar h2::before {
+  content: '◈';
+  color: #a3e078;
+  margin-right: 10px;
+}
+
+/* Texto MENU PRINCIPAL. */
+.menu-label {
+  font-size: 10px;
+
+  /* Aumenta o espaço entre as letras */
+  letter-spacing: .14em;
+
+  color: #9bc3b1;
+  padding: 0 13px;
+  margin: 0 0 15px;
+}
+
+/* Botões de navegação do menu. */
+.nav {
+  width: 100%;
+  background: transparent;
+  color: #e0eee8;
+
+  border: 0;
+  border-radius: 8px;
+
+  text-align: left;
+  padding: 12px 14px;
+  margin: 2px 0;
+
+  font-weight: 600;
+  font-size: 12px;
+}
+
+/* hover: mouse sobre o botão.
+   active: página selecionada. */
+.nav:hover,
+.nav.active {
+  background: linear-gradient(
+    90deg,
+    #218b59,
+    #0d6848
+  );
+
+  color: white;
+}
+
+/* Empurra o botão Sair para a parte
+   inferior do menu usando margem automática. */
+.nav.logout {
+  margin-top: auto;
+}
+
+/* Texto inferior do menu lateral. */
+.sidebar-footer {
+  border-top: 1px solid #ffffff26;
+  margin-top: 20px;
+  padding: 19px 13px 0;
+  color: #94bba9;
+  font-size: 11px;
+}
+
+
+/* =====================================================
+   05 - CONTEÚDO PRINCIPAL
+===================================================== */
+
+/* Área onde aparecem as páginas do sistema. */
+.content {
+  /* Desconta a largura do menu lateral */
+  width: calc(100% - 244px);
+
+  max-width: 1800px;
+
+  /* Centraliza horizontalmente */
+  margin: 0 auto;
+
+  /* clamp define um valor responsivo:
+     mínimo de 20px, ideal de 3vw
+     e máximo de 52px. */
+  padding: 29px clamp(20px, 3vw, 52px) 18px;
+}
+
+/* Cabeçalho com título e dados do usuário. */
+.topbar {
+  display: flex;
+  align-items: center;
+
+  /* Coloca o título de um lado
+     e o usuário do outro. */
+  justify-content: space-between;
+
+  gap: 20px;
+  margin-bottom: 28px;
+}
+
+/* Título da página atual. */
+.topbar h1 {
+  font-size: 25px;
+  margin-bottom: 5px;
+}
+
+/* Descrição abaixo do título. */
+.topbar p {
+  font-size: 12px;
+  color: var(--muted);
+  margin: 0;
+}
+
+/* Informações do usuário conectado. */
+.user-info {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  font-weight: 700;
+  font-size: 12px;
+}
+
+/* Círculo com a inicial do usuário. */
+.avatar {
+  width: 33px;
+  height: 33px;
+
+  display: grid;
+  place-items: center;
+
+  /* 50% cria uma forma circular */
+  border-radius: 50%;
+
+  background: #e3f4e9;
+  color: var(--forest);
+  font-weight: 800;
+}
+
+/* Aplica animação quando uma página aparece. */
+.page {
+  animation: appear .2s ease;
+}
+
+/* Define a animação de entrada.
+   A página começa levemente transparente
+   e deslocada, depois volta ao normal. */
+@keyframes appear {
+  from {
+    opacity: .5;
+    transform: translateY(5px);
+  }
+
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+
+/* =====================================================
+   06 - DASHBOARD E CARTÕES FINANCEIROS
+===================================================== */
+
+/* Container dos cartões de saldo,
+   receitas e despesas. */
+.cards {
+  display: grid;
+
+  /* Cria três colunas de tamanhos iguais */
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+
+  gap: 17px;
+  margin-bottom: 19px;
+}
+
+/* Aparência compartilhada por cartões e painéis. */
+.card,
+.panel {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+
+/* Configuração específica dos cartões. */
+.card {
+  padding: 22px 23px;
+  position: relative;
+
+  /* Esconde conteúdos que ultrapassem
+     as bordas arredondadas. */
+  overflow: hidden;
+}
+
+/* Cria uma barra vertical colorida
+   no lado esquerdo de cada cartão. */
+.card::before {
+  content: '';
+
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+
+  width: 4px;
+  background: var(--green);
+}
+
+/* Cor da barra do segundo cartão. */
+.card:nth-child(2)::before {
+  background: #16a46c;
+}
+
+/* Cor da barra do terceiro cartão. */
+.card:nth-child(3)::before {
+  background: #ed6969;
+}
+
+/* Nome do indicador financeiro. */
+.card p {
+  font-size: 12px;
+  color: var(--muted);
+  font-weight: 700;
+  margin-bottom: 12px;
+}
+
+/* Valor financeiro do cartão. */
+.card h2 {
+  /* Fonte adaptável ao tamanho da tela */
+  font-size: clamp(19px, 2vw, 27px);
+
+  margin-bottom: 7px;
+  color: var(--forest);
+
+  /* Evita quebra de linha no valor */
+  white-space: nowrap;
+}
+
+/* Texto complementar do cartão. */
+.card small {
+  font-size: 11px;
+  color: var(--muted);
+}
+
+/* Cores específicas dos indicadores. */
+.card small.green {
+  color: var(--green);
+}
+
+.card small.red {
+  color: var(--red);
+}
+
+
+/* =====================================================
+   07 - PAINÉIS E GRÁFICOS
+===================================================== */
+
+/* Divide o espaço em duas colunas.
+   A primeira é maior que a segunda. */
+.grid-two {
+  display: grid;
+
+  grid-template-columns:
+    minmax(0, 1.4fr)
+    minmax(0, 1fr);
+
+  gap: 18px;
+  margin-bottom: 19px;
+}
+
+/* Painéis brancos que agrupam conteúdos. */
+.panel {
+  padding: 23px;
+  margin-bottom: 19px;
+
+  /* Permite que o painel encolha
+     sem ultrapassar o espaço disponível. */
+  min-width: 0;
+}
+
+/* Espaçamento dos títulos dos painéis. */
+.panel h2 {
+  margin-bottom: 7px;
+}
+
+.panel h3 {
+  margin-bottom: 15px;
+}
+
+/* Cabeçalho interno de um painel. */
+.panel-heading {
+  display: flex;
+
+  /* Distribui os elementos nas extremidades */
+  justify-content: space-between;
+  align-items: center;
+
+  gap: 12px;
+  margin-bottom: 17px;
+}
+
+/* Reduz as margens dos textos do cabeçalho. */
+.panel-heading h3,
+.panel-heading h2,
+.panel-heading p {
+  margin-bottom: 3px;
+}
+
+/* Configura os gráficos renderizados
+   dentro de elementos canvas. */
+.panel canvas {
+  max-width: 100%;
+  max-height: 320px;
+}
+
+/* Altura mínima dos gráficos em painéis
+   organizados em duas colunas. */
+.grid-two .panel canvas {
+  min-height: 220px;
+}
+
+
+/* =====================================================
+   08 - BOTÕES DO SISTEMA
+===================================================== */
+
+/* Botão que parece um link de texto. */
+.text-button {
+  border: 0;
+  background: transparent;
+  color: var(--green);
+  font-size: 12px;
+  font-weight: 700;
+}
+
+/* Faz o botão ocupar toda a largura. */
+.full {
+  display: block;
+  width: 100%;
+  margin-top: 11px;
+}
+
+/* Estilo compartilhado pelos botões
+   primário, secundário e de exclusão. */
+.primary,
+.secondary,
+.danger {
+  border-radius: 8px;
+  padding: 11px 18px;
+  font-size: 12px;
+  font-weight: 700;
+  border: 1px solid transparent;
+}
+
+/* Botão principal: salvar, adicionar etc. */
+.primary {
+  background: var(--green);
+  color: #fff;
+}
+
+/* Escurece o botão ao passar o mouse. */
+.primary:hover {
+  background: var(--forest);
+}
+
+/* Botão secundário: cancelar, voltar etc. */
+.secondary {
+  background: white;
+  color: #36545a;
+  border-color: #dce6e7;
+}
+
+/* Efeito do botão secundário. */
+.secondary:hover {
+  background: #eff7f4;
+}
+
+/* Botão para ações perigosas,
+   como excluir movimentações. */
+.danger {
+  background: #e34c55;
+  color: white;
+}
+
+/* Escurece o botão de exclusão. */
+.danger:hover {
+  background: #c93842;
+}
+
+/* Organiza vários botões lado a lado. */
+.actions {
+  display: flex;
+  gap: 10px;
+
+  /* Permite quebra de linha em telas pequenas */
+  flex-wrap: wrap;
+
+  margin-top: 20px;
+}
+
+/* Centraliza os botões de confirmação. */
+.actions.centered {
+  justify-content: center;
+}
+
+
+/* =====================================================
+   09 - FORMULÁRIOS
+===================================================== */
+
+/* Limita a largura dos painéis de formulário. */
+.form-panel {
+  max-width: 860px;
+}
+
+/* Espaço abaixo da descrição do formulário. */
+.form-panel > .muted {
+  margin-bottom: 23px;
+}
+
+/* Aparência geral dos rótulos. */
+label {
+  display: block;
+  font-size: 12px;
+  font-weight: 700;
+  color: #344b4d;
+  margin-bottom: 7px;
+}
+
+/* Estiliza campos de texto, seleção
+   e áreas de observações. */
+input,
+select,
+textarea {
+  background: #fff;
+  color: var(--ink);
+
+  border: 1px solid #dfe8ea;
+  border-radius: 8px;
+
+  padding: 11px 12px;
+
+  /* Remove o contorno padrão do navegador */
+  outline: none;
+
+  /* Permite reduzir o tamanho dos campos */
+  min-width: 0;
+
+  transition:
+    border-color .2s,
+    box-shadow .2s;
+}
+
+/* :focus é aplicado quando o usuário
+   seleciona um campo para digitar. */
+input:focus,
+select:focus,
+textarea:focus {
+  border-color: #0c9965;
+
+  /* Cria um destaque verde ao redor */
+  box-shadow: 0 0 0 3px #0c99651a;
+}
+
+/* Cor dos textos de exemplo nos campos. */
+input::placeholder,
+textarea::placeholder {
+  color: #a1afb3;
+}
+
+/* Permite redimensionar a área de texto
+   somente na direção vertical. */
+textarea {
+  resize: vertical;
+}
+
+/* Faz campos específicos dos formulários
+   ocuparem toda a largura disponível.
+
+   :not([type=hidden]) exclui o campo oculto
+   usado para armazenar o ID da movimentação. */
+#movementForm > input:not([type=hidden]),
+#movementForm > textarea,
+#settingsForm > input,
+#settingsForm > select {
+  width: 100%;
+  margin-bottom: 18px;
+}
+
+/* Organiza os campos do formulário
+   de movimentações em duas colunas. */
+.form-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+
+  gap: 17px;
+  margin: 16px 0;
+}
+
+/* Campos dentro das duas colunas. */
+.form-grid input,
+.form-grid select {
+  width: 100%;
+}
+
+/* Limita a largura do formulário
+   da página de configurações. */
+#settingsForm {
+  max-width: 540px;
+}
+
+/* Espaçamento do botão de salvar configurações. */
+#settingsForm button {
+  margin-top: 8px;
+}
+
+/* Linha horizontal que separa seções. */
+hr {
+  border: 0;
+  border-top: 1px solid var(--line);
+  margin: 27px 0;
+}
+
+
+/* =====================================================
+   10 - HISTÓRICO E TABELAS
+===================================================== */
+
+/* Container das tabelas.
+   Se a tabela for maior que a tela,
+   aparece rolagem horizontal. */
+.table-wrap {
+  width: 100%;
+  overflow-x: auto;
+}
+
+/* Configura todas as tabelas do sistema. */
+table {
+  width: 100%;
+
+  /* Une as bordas das células */
+  border-collapse: collapse;
+
+  text-align: left;
+
+  /* Evita quebra de linha dentro das células */
+  white-space: nowrap;
+
+  font-size: 12px;
+}
+
+/* Cabeçalho da tabela. */
+thead {
+  background: #f5f9f9;
+}
+
+/* Títulos das colunas. */
+th {
+  font-weight: 800;
+  color: #62787c;
+  font-size: 11px;
+}
+
+/* Espaçamento das células e separadores. */
+th,
+td {
+  padding: 13px 12px;
+  border-bottom: 1px solid #edf1f2;
+}
+
+/* Destaca a linha ao passar o mouse. */
+tbody tr:hover {
+  background: #f9fcfb;
+}
+
+/* Remove a borda da última linha. */
+tbody tr:last-child td {
+  border-bottom: 0;
+}
+
+/* Organiza os filtros do histórico. */
+.filters {
+  display: flex;
+  flex-wrap: wrap;
+
+  gap: 10px;
+  margin: 19px 0;
+}
+
+/* Aparência dos campos de filtro. */
+.filters input,
+.filters select {
+  font-size: 12px;
+  min-height: 41px;
+}
+
+/* Campo de pesquisa ocupa mais espaço.
+   flex: crescimento, redução, tamanho inicial. */
+.filters #search {
+  flex: 2 1 230px;
+}
+
+/* Filtros de tipo e data. */
+.filters #filterType,
+.filters #filterDate {
+  flex: 1 1 140px;
+}
+
+/* Botão de limpar filtros mantém
+   seu tamanho conforme o conteúdo. */
+.filters .secondary {
+  flex: 0 0 auto;
+}
+
+/* Texto que informa a quantidade
+   de movimentações encontradas. */
+#historyCount {
+  font-size: 11px;
+  margin: 13px 0 0;
+}
+
+
+/* =====================================================
+   11 - EXCLUSÃO E VISÃO GERAL
+===================================================== */
+
+/* Painel de confirmação de exclusão. */
+.confirm-panel {
+  max-width: 490px;
+
+  /* Centraliza o painel horizontalmente */
+  margin: 60px auto;
+
+  padding: 40px;
+  text-align: center;
+}
+
+/* Ícone de alerta exibido na confirmação. */
+.warning-icon {
+  display: grid;
+  place-items: center;
+
+  width: 56px;
+  height: 56px;
+
+  border-radius: 50%;
+
+  background: #fff0e9;
+  color: #e77b29;
+
+  font-size: 30px;
+  font-weight: 800;
+
+  margin: 0 auto 20px;
+}
+
+/* Caixa que mostra a movimentação
+   que será excluída. */
+#deleteDescription {
+  background: #f6f9f9;
+  padding: 14px;
+  border-radius: 8px;
+}
+
+/* Barra de progresso da meta financeira. */
+.progress {
+  width: 100%;
+  height: 12px;
+
+  background: #e9f1ee;
+  border-radius: 20px;
+
+  /* Impede que o preenchimento
+     ultrapasse as bordas arredondadas. */
+  overflow: hidden;
+
+  margin: 15px 0 28px;
+}
+
+/* Parte preenchida da barra de progresso.
+   O JavaScript poderá modificar sua largura
+   conforme a meta alcançada. */
+#goalProgress {
+  width: 0;
+  height: 100%;
+
+  background: linear-gradient(
+    90deg,
+    #087c50,
+    #9bd45b
+  );
+
+  border-radius: 20px;
+
+  /* Anima mudanças na largura */
+  transition: width .4s ease;
+}
+
+
+/* =====================================================
+   12 - NOTIFICAÇÕES E RODAPÉ
+===================================================== */
+
+/* Pequena notificação que pode aparecer
+   após salvar ou excluir uma movimentação. */
+.toast {
+  /* fixed mantém o elemento preso à janela */
+  position: fixed;
+
+  right: 25px;
+  bottom: 25px;
+
+  /* Coloca a notificação acima de outros elementos */
+  z-index: 1000;
+
+  background: var(--forest);
+  color: white;
+
+  border-radius: 10px;
+  padding: 15px 22px;
+
+  box-shadow: 0 12px 30px #00000025;
+
+  font-size: 13px;
+  font-weight: 600;
+}
+
+/* Rodapé da aplicação. */
+footer {
+  padding: 22px 0;
+  text-align: center;
+  color: #9ba9ac;
+  font-size: 11px;
+}
+
+
+/* =====================================================
+   13 - RESPONSIVIDADE
+===================================================== */
+
+/* Media queries aplicam regras diferentes
+   conforme a largura da tela.
+
+   Isso permite que o mesmo sistema funcione
+   em computadores, tablets e celulares. */
+
+
+/* -----------------------------------------------------
+   TELAS COM ATÉ 1100px
+   Exemplo: notebooks menores e tablets grandes.
+----------------------------------------------------- */
+
+@media (max-width: 1100px) {
+
+  /* Reduz a largura do menu lateral. */
+  .sidebar {
+    width: 210px;
+    flex-basis: 210px;
+  }
+
+  /* Ajusta a área principal à nova largura. */
+  .content {
+    width: calc(100% - 210px);
+    padding: 25px;
+  }
+
+  /* Transforma os painéis de duas colunas
+     em uma única coluna. */
+  .grid-two {
+    grid-template-columns: 1fr;
+  }
+}
+
+
+/* -----------------------------------------------------
+   TELAS COM ATÉ 768px
+   Exemplo: tablets e celulares.
+----------------------------------------------------- */
+
+@media (max-width: 768px) {
+
+  /* O menu deixa de ficar ao lado do conteúdo
+     e passa a ficar acima dele. */
+  .layout {
+    flex-direction: column;
+  }
+
+  /* Adapta o menu lateral para uma barra
+     de navegação horizontal com quebra de linha. */
+  .sidebar {
+    position: relative;
+
+    width: 100%;
+    height: auto;
+    flex-basis: auto;
+
+    padding: 16px;
+
+    flex-direction: row;
+    flex-wrap: wrap;
+
+    gap: 5px;
+  }
+
+  /* O nome AgroLucro ocupa uma linha inteira. */
+  .sidebar h2 {
+    width: 100%;
+    margin: 0 0 12px;
+  }
+
+  /* Esconde informações secundárias
+     para economizar espaço. */
+  .menu-label,
+  .sidebar-footer {
+    display: none;
+  }
+
+  /* Botões do menu se distribuem
+     pelo espaço disponível. */
+  .nav {
+    width: auto;
+    flex: 1 1 auto;
+
+    text-align: center;
+    padding: 10px;
+  }
+
+  /* Remove o posicionamento inferior
+     do botão de sair. */
+  .nav.logout {
+    margin-top: 2px;
+  }
+
+  /* Conteúdo passa a ocupar toda a largura. */
+  .content {
+    width: 100%;
+    padding: 20px 15px;
+  }
+
+  /* Cartões financeiros ficam um abaixo do outro. */
+  .cards {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  /* Painéis ficam em uma coluna. */
+  .grid-two {
+    grid-template-columns: 1fr;
+  }
+
+  /* Alinha o cabeçalho pelo topo. */
+  .topbar {
+    align-items: flex-start;
+  }
+
+  /* Reduz o título principal. */
+  .topbar h1 {
+    font-size: 21px;
+  }
+
+  /* Reduz o espaçamento dos painéis. */
+  .panel {
+    padding: 17px;
+  }
+
+  /* Formulários passam de duas
+     colunas para uma única coluna. */
+  .form-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+
+/* -----------------------------------------------------
+   TELAS COM ATÉ 480px
+   Exemplo: smartphones menores.
+----------------------------------------------------- */
+
+@media (max-width: 480px) {
+
+  /* Reduz o espaçamento do cartão de login. */
+  .auth-card {
+    padding: 30px 22px;
+  }
+
+  /* Diminui o nome do sistema no menu. */
+  .sidebar h2 {
+    font-size: 20px;
+  }
+
+  /* Diminui os textos da navegação. */
+  .nav {
+    font-size: 11px;
+  }
+
+  /* Ajusta as informações do usuário. */
+  .user-info {
+    font-size: 10px;
+  }
+
+  /* Diminui o espaço no cabeçalho. */
+  .topbar {
+    gap: 8px;
+  }
+
+  .topbar p {
+    font-size: 11px;
+  }
+
+  /* Ajusta os valores financeiros. */
+  .card h2 {
+    font-size: 23px;
+  }
+
+  /* Cabeçalho dos painéis passa
+     a organizar os elementos verticalmente. */
+  .panel-heading {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  /* Botões podem crescer para
+     preencher o espaço disponível. */
+  .actions button {
+    flex: 1 1 auto;
+  }
+
+  /* Reduz o espaço do painel de exclusão. */
+  .confirm-panel {
+    margin: 20px auto;
+    padding: 25px 18px;
+  }
+
+  /* Notificação ocupa a largura disponível
+     com margens de 15px nas laterais. */
+  .toast {
+    left: 15px;
+    right: 15px;
+    bottom: 15px;
+  }
+}
+
+/* =====================================================
+   FIM DO ARQUIVO STYLE.CSS
+
+   IMPORTANTE:
+   Este arquivo é responsável pela aparência.
+
+   HTML: estrutura das telas.
+   CSS: cores, tamanhos, espaçamentos e layout.
+   JavaScript: navegação, cálculos e interações.
+===================================================== */
