@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <!-- Configuracoes da pagina -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Movimentações - AgroLucro</title>
+
+    <!-- Ligacao com o CSS -->
+    <link rel="stylesheet" href="movimentacao.css">
+</head>
+
+<body>
+
+    <!-- Cabecalho do sistema -->
+    <header>
+        <h1>AgroLucro</h1>
+        <p>Controle Financeiro Rural</p>
+    </header>
+
+    <!-- Menu de navegacao -->
+
+    <!-- Menu principal do AgroLucro -->
+    <nav>
+
+        <!-- Volta para o Dashboard -->
+        <a href="../dashboard/dashboard.html">
+            Início
+        </a>
+
+        <!-- Abre o cadastro de produtores -->
+        <a href="../cadastro/cadastro.html">
+            Cadastro
+        </a>
+
+        <!-- Abre o cadastro de receitas e despesas -->
+        <a href="../movimentacao/movimentacao.html">
+            Movimentações
+        </a>
+
+        <!-- Mostra as movimentacoes cadastradas -->
+        <a href="../historico/historico.html">
+            Histórico
+        </a>
+
+        <!-- Mostra os graficos financeiros -->
+        <a href="../graficos/graficos.html">
+            Gráficos
+        </a>
+
+        <!-- Abre os relatorios -->
+        <a href="../relatorios/relatorios.html">
+            Relatórios
+        </a>
+
+        <!-- Mostra o resumo geral -->
+        <a href="../visao-geral/visao-geral.html">
+            Visão Geral
+        </a>
+
+        <!-- Abre as configuracoes -->
+        <a href="../configuracoes/configuracoes.html">
+            Configurações
+        </a>
+
+        <!-- Volta para a tela de login -->
+        <a href="../login/login.html">
+            Sair
+        </a>
+
+    </nav>
+
+
+    <!-- Conteudo principal -->
+    <main>
+
+        <h2>Nova Movimentação</h2>
+        <p>Cadastre suas receitas e despesas.</p>
+
+        <!-- Formulario de movimentacao -->
+        <form id="formulario">
+
+            <!-- Descricao da movimentacao -->
+            <label for="descricao">Descrição:</label>
+            <input type="text" id="descricao" placeholder="Ex: Venda de milho" required>
+
+            <!-- Tipo de movimentacao -->
+            <label for="tipo">Tipo:</label>
+            <select id="tipo" required>
+                <option value="Receita">Receita</option>
+                <option value="Despesa">Despesa</option>
+            </select>
+
+            <!-- Valor da movimentacao -->
+            <label for="valor">Valor (R$):</label>
+            <input type="number" id="valor" min="0.01" step="0.01" placeholder="Ex: 1500.00" required>
+
+            <!-- Data da movimentacao -->
+            <label for="data">Data:</label>
+            <input type="date" id="data" required>
+
+            <!-- Botao para salvar -->
+            <button type="submit">
+                Salvar Movimentação
+            </button>
+
+        </form>
+
+        <!-- Mensagem de confirmacao -->
+        <p id="mensagem"></p>
+
+        <!-- Link para o historico -->
+        <p>
+            <a href="../historico/historico.html">
+                Ver Histórico de Movimentações
+            </a>
+        </p>
+
+    </main>
+
+    <!-- Rodape -->
+    <footer>
+        <p>AgroLucro - Projeto Acadêmico 2026</p>
+    </footer>
+
+    <!-- Ligacao com JavaScript -->
+    <script src="movimentacao.js"></script>
+
+</body>
+
+</html>

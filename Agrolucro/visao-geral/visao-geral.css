@@ -1,0 +1,141 @@
+/* Configuracao geral */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #eeeeee;
+    margin: 0;
+}
+
+/* Cabecalho */
+header {
+    background-color: #287a45;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+
+/* Menu de navegacao */
+nav {
+    background-color: #205c36;
+    padding: 15px;
+    text-align: center;
+}
+
+/* Links do menu */
+nav a {
+    color: white;
+    text-decoration: none;
+    margin: 10px;
+}
+
+/* Efeito ao passar o mouse */
+nav a:hover {
+    text-decoration: underline;
+}
+
+/* Conteudo principal */
+main {
+    background-color: white;
+    max-width: 1000px;
+    margin: 30px auto;
+    padding: 25px;
+    border: 1px solid #cccccc;
+    border-radius: 5px;
+}
+
+/* Titulo principal */
+h2 {
+    color: #287a45;
+}
+
+/* Espacamento das secoes */
+section {
+    margin-top: 30px;
+}
+
+/* Organizacao das caixas */
+.resumo {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+/* Estilo das caixas */
+.caixa {
+    background-color: #f5f5f5;
+    border: 1px solid #cccccc;
+    padding: 20px;
+    text-align: center;
+    flex: 1;
+    min-width: 160px;
+}
+
+/* Valores das caixas */
+.caixa p {
+    font-size: 24px;
+    font-weight: bold;
+    color: #287a45;
+}
+
+/* Mensagem da situacao financeira */
+#situacao {
+    background-color: #eeeeee;
+    padding: 15px;
+    border: 1px solid #cccccc;
+    font-weight: bold;
+}
+
+/* Links do conteudo */
+main a {
+    color: #287a45;
+}
+
+/* Rodape */
+footer {
+    text-align: center;
+    padding: 15px;
+    color: #555555;
+}
+
+/* Ajustes do menu de navegacao */
+nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+/* Links do menu */
+nav a {
+    display: inline-block;
+    padding: 8px;
+    margin: 0;
+}
+
+/* Destaque ao passar o mouse */
+nav a:hover {
+    background-color: #287a45;
+    text-decoration: none;
+}
+
+/* Ajustes para celulares */
+@media (max-width: 600px) {
+
+    /* Reduz o espaco do menu */
+    nav {
+        padding: 10px;
+        gap: 5px;
+    }
+
+    /* Reduz o tamanho dos links */
+    nav a {
+        font-size: 13px;
+        padding: 6px;
+    }
+
+    /* Ajusta o conteudo principal */
+    main {
+        margin: 15px 10px;
+        padding: 15px;
+    }
+}

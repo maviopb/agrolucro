@@ -1,0 +1,85 @@
+/* Configuracao geral */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #eeeeee;
+    margin: 0;
+}
+
+/* Cabecalho */
+header {
+    background-color: #287a45;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+
+/* Conteudo principal */
+main {
+    padding: 40px 20px;
+}
+
+/* Caixa de login */
+.login {
+    background-color: white;
+    width: 300px;
+    max-width: 100%;
+    margin: auto;
+    padding: 25px;
+    border: 1px solid #cccccc;
+    border-radius: 5px;
+}
+
+/* Titulo do login */
+.login h2 {
+    text-align: center;
+}
+
+/* Campos do formulario */
+label {
+    display: block;
+    margin-top: 15px;
+}
+
+input {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    box-sizing: border-box;
+    border: 1px solid #999999;
+    border-radius: 4px;
+}
+
+/* Botao entrar */
+button {
+    background-color: #287a45;
+    color: white;
+    border: none;
+    padding: 12px;
+    width: 100%;
+    margin-top: 20px;
+    cursor: pointer;
+}
+
+/* Efeito simples no botao */
+button:hover {
+    background-color: #1b5932;
+}
+
+/* Texto abaixo do formulario */
+.login p {
+    text-align: center;
+}
+
+/* Link de cadastro */
+.login a {
+    display: block;
+    text-align: center;
+    color: #287a45;
+}
+
+/* Rodape */
+footer {
+    text-align: center;
+    padding: 15px;
+    color: #555555;
+}

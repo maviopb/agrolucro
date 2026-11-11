@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - AgroLucro</title>
+
+
+    <!-- Informacoes da propriedade -->
+    <section class="boas-vindas">
+
+        <!-- Nome da propriedade -->
+        <h3 id="nomePropriedade"></h3>
+
+        <!-- Nome do responsavel -->
+        <p id="nomeResponsavel"></p>
+
+        <!-- Mensagem de boas-vindas -->
+        <p id="mensagemBoasVindas"></p>
+
+    </section>
+
+
+    <!-- Ligacao com o CSS -->
+    <link rel="stylesheet" href="dashboard.css">
+</head>
+
+<body>
+
+    <!-- Cabecalho -->
+    <header>
+        <h1>AgroLucro</h1>
+        <p>Controle Financeiro Rural</p>
+    </header>
+
+    <!-- Menu de navegacao -->
+
+    <!-- Menu principal do AgroLucro -->
+    <nav>
+
+        <!-- Volta para o Dashboard -->
+        <a href="../dashboard/dashboard.html">
+            Início
+        </a>
+
+        <!-- Abre o cadastro de produtores -->
+        <a href="../cadastro/cadastro.html">
+            Cadastro
+        </a>
+
+        <!-- Abre o cadastro de receitas e despesas -->
+        <a href="../movimentacao/movimentacao.html">
+            Movimentações
+        </a>
+
+        <!-- Mostra as movimentacoes cadastradas -->
+        <a href="../historico/historico.html">
+            Histórico
+        </a>
+
+        <!-- Mostra os graficos financeiros -->
+        <a href="../graficos/graficos.html">
+            Gráficos
+        </a>
+
+        <!-- Abre os relatorios -->
+        <a href="../relatorios/relatorios.html">
+            Relatórios
+        </a>
+
+        <!-- Mostra o resumo geral -->
+        <a href="../visao-geral/visao-geral.html">
+            Visão Geral
+        </a>
+
+        <!-- Abre as configuracoes -->
+        <a href="../configuracoes/configuracoes.html">
+            Configurações
+        </a>
+
+        <!-- Volta para a tela de login -->
+        <a href="../login/login.html">
+            Sair
+        </a>
+
+    </nav>
+
+
+    <!-- Conteudo principal -->
+    <main>
+
+        <h2>Dashboard</h2>
+        <p>Bem-vindo ao sistema AgroLucro!</p>
+
+        <!-- Resumo financeiro -->
+        <section>
+
+            <h3>Resumo Financeiro</h3>
+
+            <div class="resumo">
+
+                <!-- Total de receitas -->
+                <div class="caixa">
+                    <h4>Receitas</h4>
+                    <p id="receitas">R$ 0,00</p>
+                </div>
+
+                <!-- Total de despesas -->
+                <div class="caixa">
+                    <h4>Despesas</h4>
+                    <p id="despesas">R$ 0,00</p>
+                </div>
+
+                <!-- Saldo calculado -->
+                <div class="caixa">
+                    <h4>Saldo</h4>
+                    <p id="saldo">R$ 0,00</p>
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- Tabela de movimentacoes -->
+        <section>
+
+            <h3>Últimas Movimentações</h3>
+
+            <table>
+
+                <thead>
+                    <tr>
+                        <th>Data</th>
+                        <th>Descrição</th>
+                        <th>Tipo</th>
+                        <th>Valor</th>
+                    </tr>
+                </thead>
+
+                <!-- O JavaScript adiciona os dados aqui -->
+                <tbody id="ultimasMovimentacoes">
+                </tbody>
+
+            </table>
+
+            <p id="mensagem">
+                Nenhuma movimentação cadastrada.
+            </p>
+
+            <p>
+                <a href="../movimentacao/movimentacao.html">
+                    Cadastrar nova movimentação
+                </a>
+            </p>
+
+        </section>
+
+    </main>
+
+    <!-- Rodape -->
+    <footer>
+        <p>AgroLucro - Projeto Acadêmico 2026</p>
+    </footer>
+
+    <!-- Ligacao com o JavaScript -->
+    <script src="dashboard.js"></script>
+
+</body>
+
+</html>

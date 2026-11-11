@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <!-- Configuracoes da pagina -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Gráficos - AgroLucro</title>
+
+    <!-- Ligacao com o CSS -->
+    <link rel="stylesheet" href="graficos.css">
+</head>
+
+<body>
+
+    <!-- Cabecalho -->
+    <header>
+        <h1>AgroLucro</h1>
+        <p>Controle Financeiro Rural</p>
+    </header>
+
+    <!-- Menu de navegacao -->
+
+    <!-- Menu principal do AgroLucro -->
+    <nav>
+
+        <!-- Volta para o Dashboard -->
+        <a href="../dashboard/dashboard.html">
+            Início
+        </a>
+
+        <!-- Abre o cadastro de produtores -->
+        <a href="../cadastro/cadastro.html">
+            Cadastro
+        </a>
+
+        <!-- Abre o cadastro de receitas e despesas -->
+        <a href="../movimentacao/movimentacao.html">
+            Movimentações
+        </a>
+
+        <!-- Mostra as movimentacoes cadastradas -->
+        <a href="../historico/historico.html">
+            Histórico
+        </a>
+
+        <!-- Mostra os graficos financeiros -->
+        <a href="../graficos/graficos.html">
+            Gráficos
+        </a>
+
+        <!-- Abre os relatorios -->
+        <a href="../relatorios/relatorios.html">
+            Relatórios
+        </a>
+
+        <!-- Mostra o resumo geral -->
+        <a href="../visao-geral/visao-geral.html">
+            Visão Geral
+        </a>
+
+        <!-- Abre as configuracoes -->
+        <a href="../configuracoes/configuracoes.html">
+            Configurações
+        </a>
+
+        <!-- Volta para a tela de login -->
+        <a href="../login/login.html">
+            Sair
+        </a>
+
+    </nav>
+
+
+    <!-- Conteudo principal -->
+    <main>
+
+        <h2>Gráficos Financeiros</h2>
+        <p>Comparação entre receitas e despesas cadastradas.</p>
+
+        <!-- Resumo financeiro -->
+        <section>
+            <h3>Resumo Financeiro</h3>
+
+            <p>
+                Total de Receitas:
+                <strong id="receitas">R$ 0,00</strong>
+            </p>
+
+            <p>
+                Total de Despesas:
+                <strong id="despesas">R$ 0,00</strong>
+            </p>
+
+            <p>
+                Saldo:
+                <strong id="saldo">R$ 0,00</strong>
+            </p>
+        </section>
+
+        <!-- Grafico de barras -->
+        <section>
+            <h3>Gráfico de Receitas e Despesas</h3>
+
+            <div class="grafico">
+
+                <!-- Barra das receitas -->
+                <p>Receitas</p>
+                <div class="fundo-barra">
+                    <div id="barraReceitas" class="barra receita"></div>
+                </div>
+
+                <!-- Barra das despesas -->
+                <p>Despesas</p>
+                <div class="fundo-barra">
+                    <div id="barraDespesas" class="barra despesa"></div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Informacoes -->
+        <section>
+            <h3>Informações</h3>
+
+            <p>
+                As barras representam os valores totais
+                de receitas e despesas cadastrados.
+            </p>
+
+            <a href="../movimentacao/movimentacao.html">
+                Cadastrar nova movimentação
+            </a>
+        </section>
+
+    </main>
+
+    <!-- Rodape -->
+    <footer>
+        <p>AgroLucro - Projeto Acadêmico 2026</p>
+    </footer>
+
+    <!-- Ligacao com JavaScript -->
+    <script src="graficos.js"></script>
+
+</body>
+
+</html>

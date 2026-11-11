@@ -1,0 +1,137 @@
+/* Configuracao geral */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #eeeeee;
+    margin: 0;
+}
+
+/* Cabecalho */
+header {
+    background-color: #287a45;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+
+/* Menu */
+nav {
+    background-color: #205c36;
+    padding: 15px;
+    text-align: center;
+}
+
+/* Links */
+nav a {
+    color: white;
+    text-decoration: none;
+    margin: 10px;
+}
+
+/* Efeito nos links */
+nav a:hover {
+    text-decoration: underline;
+}
+
+/* Conteudo principal */
+main {
+    max-width: 900px;
+    margin: 30px auto;
+    padding: 25px;
+    background-color: white;
+    border: 1px solid #cccccc;
+}
+
+/* Titulos */
+h2 {
+    color: #287a45;
+}
+
+h3 {
+    color: #333333;
+}
+
+/* Separacao das secoes */
+section {
+    margin-top: 30px;
+}
+
+/* Area do grafico */
+.grafico {
+    padding: 20px;
+    border: 1px solid #cccccc;
+    background-color: #fafafa;
+}
+
+/* Fundo das barras */
+.fundo-barra {
+    width: 100%;
+    height: 35px;
+    background-color: #dddddd;
+}
+
+/* Configuracao das barras */
+.barra {
+    height: 100%;
+    width: 0%;
+}
+
+/* Barra verde das receitas */
+.receita {
+    background-color: #287a45;
+}
+
+/* Barra vermelha das despesas */
+.despesa {
+    background-color: #c0392b;
+}
+
+/* Rodape */
+footer {
+    text-align: center;
+    padding: 15px;
+    color: #555555;
+}
+
+/* Ajustes do menu de navegacao */
+nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+/* Links do menu */
+nav a {
+    display: inline-block;
+    padding: 8px;
+    margin: 0;
+}
+
+/* Destaque ao passar o mouse */
+nav a:hover {
+    background-color: #287a45;
+    text-decoration: none;
+}
+
+/* Ajustes para celulares */
+@media (max-width: 600px) {
+
+    /* Reduz o espaco do menu */
+    nav {
+        padding: 10px;
+        gap: 5px;
+    }
+
+    /* Reduz o tamanho dos links */
+    nav a {
+        font-size: 13px;
+        padding: 6px;
+    }
+
+    /* Ajusta o conteudo principal */
+    main {
+        margin: 15px 10px;
+        padding: 15px;
+    }
+}

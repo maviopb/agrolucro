@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <!-- Configuracoes da pagina -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Cadastro - AgroLucro</title>
+
+    <!-- Arquivo de estilos -->
+    <link rel="stylesheet" href="cadastro.css">
+</head>
+
+<body>
+
+    <!-- Cabecalho do sistema -->
+    <header>
+        <h1>AgroLucro</h1>
+        <p>Controle Financeiro Rural</p>
+    </header>
+
+    <!-- Menu de navegacao -->
+
+    <!-- Menu principal do AgroLucro -->
+    <nav>
+
+        <!-- Volta para o Dashboard -->
+        <a href="../dashboard/dashboard.html">
+            Início
+        </a>
+
+        <!-- Abre o cadastro de produtores -->
+        <a href="../cadastro/cadastro.html">
+            Cadastro
+        </a>
+
+        <!-- Abre o cadastro de receitas e despesas -->
+        <a href="../movimentacao/movimentacao.html">
+            Movimentações
+        </a>
+
+        <!-- Mostra as movimentacoes cadastradas -->
+        <a href="../historico/historico.html">
+            Histórico
+        </a>
+
+        <!-- Mostra os graficos financeiros -->
+        <a href="../graficos/graficos.html">
+            Gráficos
+        </a>
+
+        <!-- Abre os relatorios -->
+        <a href="../relatorios/relatorios.html">
+            Relatórios
+        </a>
+
+        <!-- Mostra o resumo geral -->
+        <a href="../visao-geral/visao-geral.html">
+            Visão Geral
+        </a>
+
+        <!-- Abre as configuracoes -->
+        <a href="../configuracoes/configuracoes.html">
+            Configurações
+        </a>
+
+        <!-- Volta para a tela de login -->
+        <a href="../login/login.html">
+            Sair
+        </a>
+
+    </nav>
+
+
+    <!-- Conteudo principal -->
+    <main>
+
+        <h2>Cadastro de Produtor Rural</h2>
+
+        <p>Preencha os dados abaixo para cadastrar um produtor.</p>
+
+        <!-- Formulario de cadastro -->
+        <form id="formCadastro">
+
+            <!-- Nome -->
+            <label for="nome">Nome completo:</label>
+            <input type="text" id="nome" required>
+
+            <!-- E-mail -->
+            <label for="email">E-mail:</label>
+            <input type="email" id="email" required>
+
+            <!-- Telefone -->
+            <label for="telefone">Telefone:</label>
+            <input type="tel" id="telefone" required>
+
+            <!-- Propriedade -->
+            <label for="propriedade">Nome da propriedade:</label>
+            <input type="text" id="propriedade" required>
+
+            <!-- Botao para salvar -->
+            <button type="submit">Cadastrar</button>
+
+        </form>
+
+        <!-- Mensagem de confirmacao -->
+        <p id="mensagem"></p>
+
+        <!-- Lista de produtores cadastrados -->
+        <h3>Produtores Cadastrados</h3>
+
+        <div class="tabela">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Nome</th>
+                        <th>E-mail</th>
+                        <th>Telefone</th>
+                        <th>Propriedade</th>
+                    </tr>
+                </thead>
+
+                <!-- O JavaScript preenche esta tabela -->
+                <tbody id="listaProdutores"></tbody>
+            </table>
+        </div>
+
+    </main>
+
+    <!-- Rodape -->
+    <footer>
+        <p>AgroLucro - Projeto Acadêmico 2026</p>
+    </footer>
+
+    <!-- Arquivo JavaScript -->
+    <script src="cadastro.js"></script>
+
+</body>
+
+</html>

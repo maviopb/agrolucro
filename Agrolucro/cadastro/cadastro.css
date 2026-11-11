@@ -1,0 +1,170 @@
+/* Configuracao geral da pagina */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #eeeeee;
+    margin: 0;
+}
+
+/* Cabecalho */
+header {
+    background-color: #287a45;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+
+/* Menu de navegacao */
+nav {
+    background-color: #205c36;
+    padding: 15px;
+    text-align: center;
+}
+
+/* Links do menu */
+nav a {
+    color: white;
+    text-decoration: none;
+    margin: 10px;
+}
+
+/* Efeito ao passar o mouse */
+nav a:hover {
+    text-decoration: underline;
+}
+
+/* Area principal */
+main {
+    background-color: white;
+    max-width: 900px;
+    margin: 30px auto;
+    padding: 25px;
+    border: 1px solid #cccccc;
+    border-radius: 5px;
+}
+
+/* Titulos */
+h2 {
+    color: #287a45;
+}
+
+h3 {
+    margin-top: 35px;
+}
+
+/* Formulario */
+form {
+    max-width: 450px;
+}
+
+/* Textos dos campos */
+label {
+    display: block;
+    margin-top: 15px;
+}
+
+/* Campos do formulario */
+input {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    box-sizing: border-box;
+    border: 1px solid #999999;
+    border-radius: 4px;
+}
+
+/* Botao de cadastro */
+button {
+    background-color: #287a45;
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    margin-top: 20px;
+    cursor: pointer;
+}
+
+/* Efeito do botao */
+button:hover {
+    background-color: #205c36;
+}
+
+/* Mensagem de confirmacao */
+#mensagem {
+    color: green;
+    font-weight: bold;
+}
+
+/* Permite rolar a tabela em telas pequenas */
+.tabela {
+    overflow-x: auto;
+}
+
+/* Tabela de produtores */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+}
+
+/* Linhas e colunas */
+th, td {
+    border: 1px solid #cccccc;
+    padding: 10px;
+    text-align: left;
+}
+
+/* Cabecalho da tabela */
+th {
+    background-color: #287a45;
+    color: white;
+}
+
+/* Rodape */
+footer {
+    text-align: center;
+    padding: 15px;
+    color: #555555;
+}
+
+/* Ajustes do menu de navegacao */
+nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+/* Links do menu */
+nav a {
+    display: inline-block;
+    padding: 8px;
+    margin: 0;
+}
+
+/* Destaque ao passar o mouse */
+nav a:hover {
+    background-color: #287a45;
+    text-decoration: none;
+}
+
+/* Ajustes para celulares */
+@media (max-width: 600px) {
+
+    /* Reduz o espaco do menu */
+    nav {
+        padding: 10px;
+        gap: 5px;
+    }
+
+    /* Reduz o tamanho dos links */
+    nav a {
+        font-size: 13px;
+        padding: 6px;
+    }
+
+    /* Ajusta o conteudo principal */
+    main {
+        margin: 15px 10px;
+        padding: 15px;
+    }
+}

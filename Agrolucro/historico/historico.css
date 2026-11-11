@@ -1,0 +1,149 @@
+/* Configuracao geral */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #eeeeee;
+    margin: 0;
+}
+
+/* Cabecalho */
+header {
+    background-color: #287a45;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+
+/* Menu de navegacao */
+nav {
+    background-color: #205c36;
+    padding: 15px;
+    text-align: center;
+}
+
+/* Links do menu */
+nav a {
+    color: white;
+    text-decoration: none;
+    margin: 10px;
+}
+
+/* Efeito ao passar o mouse */
+nav a:hover {
+    text-decoration: underline;
+}
+
+/* Conteudo principal */
+main {
+    background-color: white;
+    max-width: 1000px;
+    margin: 30px auto;
+    padding: 25px;
+    border: 1px solid #cccccc;
+    border-radius: 5px;
+}
+
+/* Titulo */
+h2 {
+    color: #287a45;
+}
+
+/* Permite rolar a tabela em telas pequenas */
+.tabela {
+    overflow-x: auto;
+}
+
+/* Tabela */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+/* Linhas e colunas */
+th, td {
+    border: 1px solid #cccccc;
+    padding: 12px;
+    text-align: left;
+}
+
+/* Cabecalho da tabela */
+th {
+    background-color: #287a45;
+    color: white;
+}
+
+/* Botao de excluir */
+button {
+    background-color: #b33333;
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    cursor: pointer;
+}
+
+/* Efeito do botao */
+button:hover {
+    background-color: #8b2525;
+}
+
+/* Mensagem */
+#mensagem {
+    color: #555555;
+    margin-top: 20px;
+}
+
+/* Link para movimentacoes */
+main a {
+    color: #287a45;
+}
+
+/* Rodape */
+footer {
+    text-align: center;
+    padding: 15px;
+    color: #555555;
+}
+
+/* Ajustes do menu de navegacao */
+nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+/* Links do menu */
+nav a {
+    display: inline-block;
+    padding: 8px;
+    margin: 0;
+}
+
+/* Destaque ao passar o mouse */
+nav a:hover {
+    background-color: #287a45;
+    text-decoration: none;
+}
+
+/* Ajustes para celulares */
+@media (max-width: 600px) {
+
+    /* Reduz o espaco do menu */
+    nav {
+        padding: 10px;
+        gap: 5px;
+    }
+
+    /* Reduz o tamanho dos links */
+    nav a {
+        font-size: 13px;
+        padding: 6px;
+    }
+
+    /* Ajusta o conteudo principal */
+    main {
+        margin: 15px 10px;
+        padding: 15px;
+    }
+}

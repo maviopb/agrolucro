@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <!-- Configuracoes da pagina -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Configurações - AgroLucro</title>
+
+    <!-- Ligacao com o arquivo CSS -->
+    <link rel="stylesheet" href="configuracoes.css">
+</head>
+
+<body>
+
+    <!-- Cabecalho do sistema -->
+    <header>
+        <h1>AgroLucro</h1>
+        <p>Controle Financeiro Rural</p>
+    </header>
+
+    <!-- Menu de navegacao -->
+
+    <!-- Menu principal do AgroLucro -->
+    <nav>
+
+        <!-- Volta para o Dashboard -->
+        <a href="../dashboard/dashboard.html">
+            Início
+        </a>
+
+        <!-- Abre o cadastro de produtores -->
+        <a href="../cadastro/cadastro.html">
+            Cadastro
+        </a>
+
+        <!-- Abre o cadastro de receitas e despesas -->
+        <a href="../movimentacao/movimentacao.html">
+            Movimentações
+        </a>
+
+        <!-- Mostra as movimentacoes cadastradas -->
+        <a href="../historico/historico.html">
+            Histórico
+        </a>
+
+        <!-- Mostra os graficos financeiros -->
+        <a href="../graficos/graficos.html">
+            Gráficos
+        </a>
+
+        <!-- Abre os relatorios -->
+        <a href="../relatorios/relatorios.html">
+            Relatórios
+        </a>
+
+        <!-- Mostra o resumo geral -->
+        <a href="../visao-geral/visao-geral.html">
+            Visão Geral
+        </a>
+
+        <!-- Abre as configuracoes -->
+        <a href="../configuracoes/configuracoes.html">
+            Configurações
+        </a>
+
+        <!-- Volta para a tela de login -->
+        <a href="../login/login.html">
+            Sair
+        </a>
+
+    </nav>
+
+
+    <!-- Conteudo principal -->
+    <main>
+
+        <h2>Configurações</h2>
+
+        <p>
+            Gerencie as informações e preferências
+            do sistema AgroLucro.
+        </p>
+
+        <!-- Primeira secao: dados da propriedade -->
+        <section>
+
+            <h3>Dados da Propriedade</h3>
+
+            <!-- Formulario para salvar as informacoes -->
+            <form id="formConfiguracoes">
+
+                <!-- Nome da propriedade -->
+                <label for="propriedade">
+                    Nome da Propriedade:
+                </label>
+
+                <input type="text" id="propriedade" placeholder="Ex: Fazenda Boa Esperança" required>
+
+                <!-- Nome do responsavel -->
+                <label for="responsavel">
+                    Nome do Responsável:
+                </label>
+
+                <input type="text" id="responsavel" placeholder="Ex: João Silva" required>
+
+                <!-- Botao para salvar -->
+                <button type="submit">
+                    Salvar Informações
+                </button>
+
+            </form>
+
+            <!-- Mensagem de confirmacao -->
+            <p id="mensagem"></p>
+
+        </section>
+
+        <!-- Segunda secao: preferencias -->
+        <section>
+
+            <h3>Preferências</h3>
+
+            <p>
+                Escolha algumas preferências
+                para o sistema.
+            </p>
+
+            <!-- Opcao de boas-vindas -->
+            <label class="opcao">
+
+                <input type="checkbox" id="boasVindas">
+
+                Ativar mensagem de boas-vindas
+
+            </label>
+
+            <!-- Botao para salvar a preferencia -->
+            <button type="button" id="salvarPreferencias">
+                Salvar Preferências
+            </button>
+
+            <!-- Mensagem das preferencias -->
+            <p id="mensagemPreferencias"></p>
+
+        </section>
+
+        <!-- Terceira secao: gerenciamento -->
+        <section>
+
+            <h3>Gerenciamento de Dados</h3>
+
+            <p>
+                Esta opção permite apagar todas
+                as movimentações financeiras cadastradas.
+            </p>
+
+            <!-- Botao para apagar os dados -->
+            <button type="button" id="apagarDados" class="botao-excluir">
+                Apagar Movimentações
+            </button>
+
+            <!-- Mensagem de exclusao -->
+            <p id="mensagemExclusao"></p>
+
+        </section>
+
+    </main>
+
+    <!-- Rodape -->
+    <footer>
+        <p>AgroLucro - Projeto Acadêmico 2026</p>
+    </footer>
+
+    <!-- Ligacao com JavaScript -->
+    <script src="configuracoes.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <!-- Configuracoes da pagina -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Visão Geral - AgroLucro</title>
+
+    <!-- Ligacao com o CSS -->
+    <link rel="stylesheet" href="visao-geral.css">
+</head>
+
+<body>
+
+    <!-- Cabecalho do sistema -->
+    <header>
+        <h1>AgroLucro</h1>
+        <p>Controle Financeiro Rural</p>
+    </header>
+
+    <!-- Menu de navegacao -->
+
+    <!-- Menu principal do AgroLucro -->
+    <nav>
+
+        <!-- Volta para o Dashboard -->
+        <a href="../dashboard/dashboard.html">
+            Início
+        </a>
+
+        <!-- Abre o cadastro de produtores -->
+        <a href="../cadastro/cadastro.html">
+            Cadastro
+        </a>
+
+        <!-- Abre o cadastro de receitas e despesas -->
+        <a href="../movimentacao/movimentacao.html">
+            Movimentações
+        </a>
+
+        <!-- Mostra as movimentacoes cadastradas -->
+        <a href="../historico/historico.html">
+            Histórico
+        </a>
+
+        <!-- Mostra os graficos financeiros -->
+        <a href="../graficos/graficos.html">
+            Gráficos
+        </a>
+
+        <!-- Abre os relatorios -->
+        <a href="../relatorios/relatorios.html">
+            Relatórios
+        </a>
+
+        <!-- Mostra o resumo geral -->
+        <a href="../visao-geral/visao-geral.html">
+            Visão Geral
+        </a>
+
+        <!-- Abre as configuracoes -->
+        <a href="../configuracoes/configuracoes.html">
+            Configurações
+        </a>
+
+        <!-- Volta para a tela de login -->
+        <a href="../login/login.html">
+            Sair
+        </a>
+
+    </nav>
+
+
+    <!-- Conteudo principal -->
+    <main>
+
+        <h2>Visão Geral</h2>
+
+        <p>
+            Acompanhe as principais informações
+            do sistema AgroLucro.
+        </p>
+
+        <!-- Informacoes do sistema -->
+        <section>
+
+            <h3>Informações Gerais</h3>
+
+            <div class="resumo">
+
+                <!-- Quantidade de produtores -->
+                <div class="caixa">
+                    <h4>Produtores Cadastrados</h4>
+                    <p id="totalProdutores">0</p>
+                </div>
+
+                <!-- Quantidade de movimentacoes -->
+                <div class="caixa">
+                    <h4>Movimentações</h4>
+                    <p id="totalMovimentacoes">0</p>
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- Resumo financeiro -->
+        <section>
+
+            <h3>Resumo Financeiro</h3>
+
+            <div class="resumo">
+
+                <!-- Receitas -->
+                <div class="caixa">
+                    <h4>Total de Receitas</h4>
+                    <p id="receitas">R$ 0,00</p>
+                </div>
+
+                <!-- Despesas -->
+                <div class="caixa">
+                    <h4>Total de Despesas</h4>
+                    <p id="despesas">R$ 0,00</p>
+                </div>
+
+                <!-- Saldo -->
+                <div class="caixa">
+                    <h4>Saldo Atual</h4>
+                    <p id="saldo">R$ 0,00</p>
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- Situacao financeira -->
+        <section>
+
+            <h3>Situação Financeira</h3>
+
+            <!-- Mensagem adicionada pelo JavaScript -->
+            <p id="situacao"></p>
+
+        </section>
+
+        <!-- Links para outras paginas -->
+        <section>
+
+            <h3>Acesso Rápido</h3>
+
+            <p>
+                <a href="../movimentacao/movimentacao.html">
+                    Cadastrar Movimentação
+                </a>
+            </p>
+
+            <p>
+                <a href="../relatorios/relatorios.html">
+                    Consultar Relatórios
+                </a>
+            </p>
+
+            <p>
+                <a href="../graficos/graficos.html">
+                    Visualizar Gráficos
+                </a>
+            </p>
+
+        </section>
+
+    </main>
+
+    <!-- Rodape -->
+    <footer>
+        <p>AgroLucro - Projeto Acadêmico 2026</p>
+    </footer>
+
+    <!-- Ligacao com JavaScript -->
+    <script src="visao-geral.js"></script>
+
+</body>
+
+</html>
