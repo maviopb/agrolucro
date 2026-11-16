@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -5,10 +6,19 @@
     <!-- Configuracoes da pagina -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+=======
+<!doctype html>
+<html lang="pt-br">
+  <head>
+    <!-- Configuracoes da pagina -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+>>>>>>> ddad8e8 (Atualiza AgroLucro 2.0 com planejamento rural)
 
     <title>Relatórios - AgroLucro</title>
 
     <!-- Ligacao com o CSS -->
+<<<<<<< HEAD
     <link rel="stylesheet" href="relatorios.css">
 </head>
 
@@ -150,16 +160,131 @@
 
         </section>
 
+=======
+    <link rel="stylesheet" href="relatorios.css" />
+  </head>
+
+  <body>
+    <!-- Cabecalho do sistema -->
+    <header>
+      <h1>AgroLucro</h1>
+      <p>Controle Financeiro Rural</p>
+    </header>
+
+    <!-- Menu principal -->
+    <nav>
+      <a href="/dashboard/dashboard.html">Início</a>
+      <a href="/cadastro/cadastro.html">Cadastro</a>
+      <a href="/movimentacao/movimentacao.html">Movimentações</a>
+      <a href="/historico/historico.html">Histórico</a>
+      <a href="/graficos/graficos.html">Gráficos</a>
+      <a href="/relatorios/relatorios.html">Relatórios</a>
+      <a href="/visao-geral/visao-geral.html">Visão Geral</a>
+      <a href="/planejamento/planejamento.html">Planejamento</a>
+      <a href="/configuracoes/configuracoes.html">Configurações</a>
+      <a href="/login/login.html">Sair</a>
+    </nav>
+
+    <!-- Conteudo principal -->
+    <main>
+      <h2>Relatório Financeiro</h2>
+
+      <p>Consulte receitas e despesas por período e imprima o resultado.</p>
+
+      <!-- Filtro para consultar um periodo especifico -->
+      <section class="filtros">
+        <h3>Selecionar período</h3>
+        <div class="campos-filtro">
+          <div>
+            <label for="dataInicio">Data inicial:</label>
+            <input type="date" id="dataInicio" />
+          </div>
+          <div>
+            <label for="dataFim">Data final:</label>
+            <input type="date" id="dataFim" />
+          </div>
+          <button type="button" id="filtrar">Filtrar</button>
+          <button type="button" id="limpar" class="botao-secundario">
+            Mostrar tudo
+          </button>
+        </div>
+        <p id="erroFiltro" role="alert"></p>
+      </section>
+
+      <!-- Identifica o periodo consultado, inclusive na impressao -->
+      <p id="periodoRelatorio">Período: todas as datas</p>
+
+      <!-- Resumo financeiro -->
+      <section>
+        <h3>Resultado do período</h3>
+
+        <div class="resumo">
+          <div class="caixa">
+            <h4>Total de Receitas</h4>
+            <p id="receitas">R$ 0,00</p>
+          </div>
+
+          <div class="caixa">
+            <h4>Total de Despesas</h4>
+            <p id="despesas">R$ 0,00</p>
+          </div>
+
+          <div class="caixa">
+            <h4>Saldo Final</h4>
+            <p id="saldo">R$ 0,00</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Tabela do relatorio -->
+      <section>
+        <h3>Movimentações encontradas: <span id="quantidade">0</span></h3>
+
+        <div class="tabela">
+          <table>
+            <!-- Cabecalho da tabela -->
+            <thead>
+              <tr>
+                <th>Data</th>
+                <th>Descrição</th>
+                <th>Tipo</th>
+                <th>Valor</th>
+              </tr>
+            </thead>
+
+            <!-- Dados adicionados pelo JavaScript -->
+            <tbody id="tabelaRelatorio"></tbody>
+          </table>
+        </div>
+
+        <!-- Mensagem caso nao existam dados -->
+        <p id="mensagem"></p>
+      </section>
+
+      <!-- Botao para imprimir -->
+      <section class="area-botao">
+        <button onclick="imprimirRelatorio()">Imprimir Relatório</button>
+      </section>
+>>>>>>> ddad8e8 (Atualiza AgroLucro 2.0 com planejamento rural)
     </main>
 
     <!-- Rodape -->
     <footer>
+<<<<<<< HEAD
         <p>AgroLucro - Projeto Acadêmico 2026</p>
+=======
+      <p>AgroLucro - Projeto Acadêmico 2026</p>
+>>>>>>> ddad8e8 (Atualiza AgroLucro 2.0 com planejamento rural)
     </footer>
 
     <!-- Ligacao com JavaScript -->
     <script src="relatorios.js"></script>
+<<<<<<< HEAD
 
 </body>
 
 </html>
+=======
+  </body>
+</html>
+>>>>>>> ddad8e8 (Atualiza AgroLucro 2.0 com planejamento rural)

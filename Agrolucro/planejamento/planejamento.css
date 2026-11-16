@@ -1,0 +1,167 @@
+/* Configuracoes gerais */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    background-color: #eeeeee;
+}
+
+/* Cabecalho */
+header {
+    background-color: #287a45;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+
+/* Menu */
+nav {
+    background-color: #205c36;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    padding: 15px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    padding: 8px;
+}
+
+nav a:hover {
+    background-color: #287a45;
+}
+
+/* Conteudo principal */
+main {
+    max-width: 1100px;
+    margin: 30px auto;
+    padding: 25px;
+    background-color: white;
+    border-radius: 6px;
+}
+
+h2, h3 {
+    color: #287a45;
+}
+
+/* Resumo financeiro */
+.resumo {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin: 25px 0;
+}
+
+.caixa {
+    flex: 1;
+    min-width: 180px;
+    background-color: #f1f7f2;
+    border: 1px solid #d1dfd4;
+    padding: 20px;
+    text-align: center;
+}
+
+.caixa p {
+    font-size: 24px;
+    font-weight: bold;
+    color: #205c36;
+}
+
+/* Formulario */
+.formulario {
+    background-color: #f8f8f8;
+    padding: 20px;
+    margin-bottom: 30px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+label {
+    font-weight: bold;
+}
+
+input, select {
+    padding: 12px;
+    border: 1px solid #cccccc;
+    border-radius: 4px;
+    font-size: 15px;
+}
+
+/* Botoes */
+button {
+    background-color: #287a45;
+    color: white;
+    padding: 12px;
+    border: none;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+button:hover {
+    background-color: #205c36;
+}
+
+.botao-excluir {
+    background-color: #b52b2b;
+}
+
+.botao-excluir:hover {
+    background-color: #8c2020;
+}
+
+.botao-situacao {
+    background-color: #4e6572;
+    margin-bottom: 5px;
+}
+
+/* Tabela */
+.tabela {
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+}
+
+th, td {
+    border: 1px solid #cccccc;
+    padding: 10px;
+    text-align: left;
+}
+
+th {
+    background-color: #287a45;
+    color: white;
+}
+
+/* Rodape */
+footer {
+    text-align: center;
+    padding: 20px;
+    color: #555555;
+}
+
+/* Ajustes para celulares */
+@media (max-width: 600px) {
+    main {
+        margin: 15px 10px;
+        padding: 15px;
+    }
+
+    .caixa {
+        min-width: 100%;
+        box-sizing: border-box;
+    }
+
+    nav a {
+        font-size: 13px;
+    }
+}

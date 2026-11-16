@@ -1,3 +1,7 @@
+<<<<<<< HEAD
+=======
+
+>>>>>>> ddad8e8 (Atualiza AgroLucro 2.0 com planejamento rural)
 /* Configuracao geral */
 body {
     font-family: Arial, sans-serif;
@@ -190,3 +194,58 @@ nav a:hover {
         padding: 15px;
     }
 }
+<<<<<<< HEAD
+=======
+
+/* Area de filtros do relatorio */
+.filtros {
+    background-color: #f5f8f5;
+    border: 1px solid #d6e3d8;
+    padding: 15px;
+    margin-top: 20px;
+}
+
+.filtros h3 {
+    margin-top: 0;
+}
+
+.campos-filtro {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    align-items: end;
+}
+
+.campos-filtro label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.campos-filtro input {
+    padding: 10px;
+    border: 1px solid #aaa;
+}
+
+.botao-secundario {
+    background-color: #666;
+}
+
+.botao-secundario:hover {
+    background-color: #444;
+}
+
+#erroFiltro {
+    color: #a02222;
+}
+
+#periodoRelatorio {
+    font-weight: bold;
+}
+
+@media print {
+    /* O filtro nao precisa aparecer no documento impresso */
+    .filtros {
+        display: none;
+    }
+}
+>>>>>>> ddad8e8 (Atualiza AgroLucro 2.0 com planejamento rural)
