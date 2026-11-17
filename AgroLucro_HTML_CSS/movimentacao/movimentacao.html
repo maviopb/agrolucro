@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <!-- Configuracoes da pagina -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Movimentações - AgroLucro</title>
+
+    <!-- Arquivo CSS -->
+    <link rel="stylesheet" href="movimentacao.css">
+</head>
+
+<body>
+
+    <!-- Cabecalho -->
+    <header>
+        <h1>AgroLucro</h1>
+        <p>Sistema de Controle Financeiro Rural</p>
+    </header>
+
+    <!-- Menu -->
+    <nav>
+        <a href="../dashboard/dashboard.html">Início</a>
+        <a href="../cadastro/cadastro.html">Cadastro</a>
+        <a href="../movimentacao/movimentacao.html">Movimentações</a>
+        <a href="../historico/historico.html">Histórico</a>
+        <a href="../graficos/graficos.html">Gráficos</a>
+        <a href="../relatorios/relatorios.html">Relatórios</a>
+        <a href="../visao-geral/visao-geral.html">Visão Geral</a>
+        <a href="../planejamento/planejamento.html">Planejamento Rural</a>
+        <a href="../configuracoes/configuracoes.html">Configurações</a>
+        <a href="../login/login.html">Sair</a>
+    </nav>
+
+    <main>
+
+        <h2>Movimentações Financeiras</h2>
+
+        <p>
+            Página destinada ao registro de receitas e despesas
+            da propriedade rural.
+        </p>
+
+        <!-- Formulario demonstrativo -->
+        <section class="formulario">
+
+            <h3>Nova Movimentação</h3>
+
+            <form>
+
+                <label for="descricao">Descrição:</label>
+                <input type="text" id="descricao"
+                       placeholder="Ex.: Venda de milho" required>
+
+                <label for="tipo">Tipo:</label>
+                <select id="tipo" required>
+                    <option value="">Selecione</option>
+                    <option value="Receita">Receita</option>
+                    <option value="Despesa">Despesa</option>
+                </select>
+
+                <label for="valor">Valor (R$):</label>
+                <input type="number" id="valor"
+                       min="0.01" step="0.01"
+                       placeholder="0,00" required>
+
+                <label for="data">Data:</label>
+                <input type="date" id="data" required>
+
+                <!-- Botao demonstrativo -->
+                <button type="button">
+                    Registrar Movimentação
+                </button>
+
+            </form>
+
+        </section>
+
+        <!-- Exemplos de receitas e despesas -->
+        <section>
+
+            <h3>Exemplos de Movimentações</h3>
+
+            <div class="exemplos">
+
+                <div class="caixa receita">
+                    <h4>Receita</h4>
+                    <p>Venda de milho</p>
+                    <strong>R$ 5.000,00</strong>
+                </div>
+
+                <div class="caixa despesa">
+                    <h4>Despesa</h4>
+                    <p>Compra de sementes</p>
+                    <strong>R$ 1.200,00</strong>
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+    <footer>
+        <p>AgroLucro - Projeto Acadêmico 2026</p>
+    </footer>
+
+</body>
+</html>

@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <!-- Configuracoes da pagina -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Histórico - AgroLucro</title>
+
+    <!-- Ligacao com o CSS -->
+    <link rel="stylesheet" href="historico.css">
+</head>
+
+<body>
+
+    <!-- Cabecalho do sistema -->
+    <header>
+        <h1>AgroLucro</h1>
+        <p>Sistema de Controle Financeiro Rural</p>
+    </header>
+
+    <!-- Menu de navegacao -->
+    <nav>
+        <a href="../dashboard/dashboard.html">Início</a>
+        <a href="../cadastro/cadastro.html">Cadastro</a>
+        <a href="../movimentacao/movimentacao.html">Movimentações</a>
+        <a href="../historico/historico.html">Histórico</a>
+        <a href="../graficos/graficos.html">Gráficos</a>
+        <a href="../relatorios/relatorios.html">Relatórios</a>
+        <a href="../visao-geral/visao-geral.html">Visão Geral</a>
+        <a href="../planejamento/planejamento.html">Planejamento Rural</a>
+        <a href="../configuracoes/configuracoes.html">Configurações</a>
+        <a href="../login/login.html">Sair</a>
+    </nav>
+
+    <!-- Conteudo principal -->
+    <main>
+
+        <h2>Histórico de Movimentações</h2>
+
+        <p>
+            Consulte o exemplo de registro das entradas e
+            saídas financeiras de uma propriedade rural.
+        </p>
+
+        <!-- Informacoes do historico -->
+        <section class="informacoes">
+
+            <h3>Movimentações Registradas</h3>
+
+            <p>
+                A tabela abaixo apresenta exemplos de
+                receitas e despesas da propriedade.
+            </p>
+
+        </section>
+
+        <!-- Tabela com movimentacoes -->
+        <section class="tabela">
+
+            <table>
+
+                <!-- Cabecalho da tabela -->
+                <thead>
+                    <tr>
+                        <th>Data</th>
+                        <th>Descrição</th>
+                        <th>Categoria</th>
+                        <th>Tipo</th>
+                        <th>Valor</th>
+                    </tr>
+                </thead>
+
+                <!-- Dados demonstrativos -->
+                <tbody>
+
+                    <tr>
+                        <td>05/11/2026</td>
+                        <td>Venda de milho</td>
+                        <td>Produção agrícola</td>
+                        <td class="receita">Receita</td>
+                        <td>R$ 5.000,00</td>
+                    </tr>
+
+                    <tr>
+                        <td>08/11/2026</td>
+                        <td>Compra de sementes</td>
+                        <td>Insumos</td>
+                        <td class="despesa">Despesa</td>
+                        <td>R$ 1.200,00</td>
+                    </tr>
+
+                    <tr>
+                        <td>10/11/2026</td>
+                        <td>Combustível</td>
+                        <td>Transporte</td>
+                        <td class="despesa">Despesa</td>
+                        <td>R$ 300,00</td>
+                    </tr>
+
+                </tbody>
+
+            </table>
+
+        </section>
+
+        <!-- Explicacao do funcionamento -->
+        <section class="observacao">
+
+            <h3>Sobre o Histórico</h3>
+
+            <p>
+                O histórico tem como finalidade organizar
+                as movimentações financeiras, permitindo
+                visualizar datas, descrições, categorias
+                e valores.
+            </p>
+
+            <p>
+                Nesta versão acadêmica, os registros são
+                exemplos inseridos diretamente no HTML.
+            </p>
+
+        </section>
+
+    </main>
+
+    <!-- Rodape -->
+    <footer>
+        <p>AgroLucro - Projeto Acadêmico 2026</p>
+    </footer>
+
+</body>
+</html>

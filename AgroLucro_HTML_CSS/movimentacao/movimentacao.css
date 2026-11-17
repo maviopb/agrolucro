@@ -1,0 +1,144 @@
+/* Configuracoes gerais */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    background-color: #eeeeee;
+}
+
+/* Cabecalho */
+header {
+    background-color: #287a45;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+
+/* Menu de navegacao */
+nav {
+    background-color: #205c36;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    padding: 15px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    padding: 8px;
+}
+
+nav a:hover {
+    background-color: #287a45;
+}
+
+/* Conteudo principal */
+main {
+    background-color: white;
+    max-width: 1000px;
+    margin: 30px auto;
+    padding: 25px;
+    border-radius: 6px;
+}
+
+/* Titulos */
+h2, h3 {
+    color: #287a45;
+}
+
+/* Area do formulario */
+.formulario {
+    background-color: #f7f7f7;
+    padding: 20px;
+    margin: 25px 0;
+    border: 1px solid #dddddd;
+}
+
+/* Campos */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+label {
+    font-weight: bold;
+}
+
+input, select {
+    padding: 12px;
+    border: 1px solid #cccccc;
+    border-radius: 4px;
+}
+
+/* Botao */
+button {
+    background-color: #287a45;
+    color: white;
+    border: none;
+    padding: 12px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+button:hover {
+    background-color: #205c36;
+}
+
+/* Aviso */
+.aviso {
+    background-color: #fff8e8;
+    color: #795d1d;
+    padding: 10px;
+    border-left: 3px solid #c19a45;
+}
+
+/* Exemplos financeiros */
+.exemplos {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+/* Caixas */
+.caixa {
+    flex: 1;
+    min-width: 180px;
+    padding: 20px;
+    background-color: #f5f5f5;
+    border: 1px solid #dddddd;
+}
+
+/* Receita */
+.receita {
+    border-left: 4px solid #287a45;
+}
+
+/* Despesa */
+.despesa {
+    border-left: 4px solid #c04a4a;
+}
+
+/* Rodape */
+footer {
+    text-align: center;
+    padding: 20px;
+    color: #555555;
+}
+
+/* Adaptacao para celulares */
+@media (max-width: 600px) {
+    main {
+        margin: 15px 10px;
+        padding: 15px;
+    }
+
+    nav a {
+        font-size: 13px;
+    }
+}

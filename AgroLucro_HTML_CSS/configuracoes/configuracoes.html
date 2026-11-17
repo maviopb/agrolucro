@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <!-- Configuracoes da pagina -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Configurações - AgroLucro</title>
+
+    <!-- Arquivo CSS -->
+    <link rel="stylesheet" href="configuracoes.css">
+</head>
+
+<body>
+
+    <!-- Cabecalho -->
+    <header>
+        <h1>AgroLucro</h1>
+        <p>Sistema de Controle Financeiro Rural</p>
+    </header>
+
+    <!-- Menu principal -->
+    <nav>
+        <a href="../dashboard/dashboard.html">Início</a>
+        <a href="../cadastro/cadastro.html">Cadastro</a>
+        <a href="../movimentacao/movimentacao.html">Movimentações</a>
+        <a href="../historico/historico.html">Histórico</a>
+        <a href="../graficos/graficos.html">Gráficos</a>
+        <a href="../relatorios/relatorios.html">Relatórios</a>
+        <a href="../visao-geral/visao-geral.html">Visão Geral</a>
+        <a href="../planejamento/planejamento.html">Planejamento Rural</a>
+        <a href="../configuracoes/configuracoes.html">Configurações</a>
+        <a href="../login/login.html">Sair</a>
+    </nav>
+
+    <!-- Conteudo principal -->
+    <main>
+
+        <h2>Configurações</h2>
+
+        <p>
+            Informações e preferências da propriedade rural.
+        </p>
+
+        <!-- Dados da propriedade -->
+        <section class="formulario">
+
+            <h3>Dados da Propriedade</h3>
+
+            <form>
+
+                <label for="propriedade">
+                    Nome da propriedade:
+                </label>
+
+                <input type="text" id="propriedade"
+                       value="Fazenda Boa Esperança">
+
+                <label for="responsavel">
+                    Nome do responsável:
+                </label>
+
+                <input type="text" id="responsavel"
+                       value="João Silva">
+
+                <label for="atividade">
+                    Atividade principal:
+                </label>
+
+                <select id="atividade">
+                    <option selected>Agricultura</option>
+                    <option>Pecuária</option>
+                    <option>Agricultura e Pecuária</option>
+                    <option>Outros</option>
+                </select>
+
+                <!-- Botao demonstrativo -->
+                <button type="button">
+                    Salvar Configurações
+                </button>
+
+            </form>
+
+
+        </section>
+
+        <!-- Preferencias -->
+        <section class="preferencias">
+
+            <h3>Preferências do Sistema</h3>
+
+            <div class="opcao">
+                <input type="checkbox" id="boas-vindas" checked>
+                <label for="boas-vindas">
+                    Exibir mensagem de boas-vindas
+                </label>
+            </div>
+
+            <div class="opcao">
+                <input type="checkbox" id="resumo" checked>
+                <label for="resumo">
+                    Exibir resumo financeiro
+                </label>
+            </div>
+
+        </section>
+
+        <!-- Informacoes do projeto -->
+        <section class="informacoes">
+
+            <h3>Sobre o AgroLucro</h3>
+
+            <p>
+                <strong>Nome:</strong>
+                AgroLucro 2.0
+            </p>
+
+            <p>
+                <strong>Tipo:</strong>
+                Projeto acadêmico
+            </p>
+
+            <p>
+                <strong>Tecnologias:</strong>
+                HTML5 e CSS3
+            </p>
+
+            <p>
+                <strong>Objetivo:</strong>
+                Apresentar uma interface de controle
+                financeiro e planejamento rural.
+            </p>
+
+        </section>
+
+    </main>
+
+    <!-- Rodape -->
+    <footer>
+        <p>AgroLucro - Projeto Acadêmico 2026</p>
+    </footer>
+
+</body>
+</html>

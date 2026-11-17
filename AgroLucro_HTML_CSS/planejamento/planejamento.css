@@ -1,0 +1,188 @@
+/* Configuracoes gerais */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #eeeeee;
+    margin: 0;
+}
+
+/* Cabecalho */
+header {
+    background-color: #287a45;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+
+/* Menu */
+nav {
+    background-color: #205c36;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    padding: 15px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    padding: 8px;
+}
+
+nav a:hover {
+    background-color: #287a45;
+}
+
+/* Conteudo principal */
+main {
+    background-color: white;
+    max-width: 1100px;
+    margin: 30px auto;
+    padding: 25px;
+    border-radius: 6px;
+}
+
+/* Titulos */
+h2, h3 {
+    color: #287a45;
+}
+
+/* Resumo */
+.resumo {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin: 25px 0;
+}
+
+/* Caixas de indicadores */
+.caixa {
+    flex: 1;
+    min-width: 180px;
+    background-color: #f1f7f2;
+    border: 1px solid #cbdccd;
+    padding: 20px;
+    text-align: center;
+}
+
+.caixa p {
+    color: #205c36;
+    font-size: 22px;
+    font-weight: bold;
+}
+
+/* Formulario */
+.formulario {
+    background-color: #f7f7f7;
+    padding: 20px;
+    margin: 25px 0;
+    border: 1px solid #dddddd;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+/* Campos */
+label {
+    font-weight: bold;
+}
+
+input, select {
+    padding: 12px;
+    border: 1px solid #cccccc;
+    border-radius: 4px;
+}
+
+/* Botao */
+button {
+    background-color: #287a45;
+    color: white;
+    border: none;
+    padding: 12px;
+    margin-top: 10px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #205c36;
+}
+
+/* Aviso */
+.aviso {
+    background-color: #fff8e8;
+    color: #795d1d;
+    padding: 10px;
+    margin-top: 20px;
+}
+
+/* Tabela */
+.tabela {
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+}
+
+th, td {
+    border: 1px solid #cccccc;
+    padding: 12px;
+    text-align: left;
+}
+
+th {
+    background-color: #287a45;
+    color: white;
+}
+
+/* Situacao dos materiais */
+.planejado {
+    color: #b57916;
+    font-weight: bold;
+}
+
+.comprado {
+    color: #287a45;
+    font-weight: bold;
+}
+
+/* Observacao */
+.observacao {
+    background-color: #f1f7f2;
+    padding: 20px;
+    margin-top: 30px;
+    border-left: 4px solid #287a45;
+}
+
+/* Rodape */
+footer {
+    text-align: center;
+    padding: 20px;
+    color: #555555;
+}
+
+/* Responsividade */
+@media (max-width: 600px) {
+
+    main {
+        margin: 15px 10px;
+        padding: 15px;
+    }
+
+    .caixa {
+        min-width: 100%;
+    }
+
+    nav a {
+        font-size: 13px;
+    }
+}

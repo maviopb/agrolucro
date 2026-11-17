@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <!-- Configuracoes da pagina -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Planejamento Rural - AgroLucro</title>
+
+    <!-- Arquivo CSS -->
+    <link rel="stylesheet" href="planejamento.css">
+</head>
+
+<body>
+
+    <!-- Cabecalho -->
+    <header>
+        <h1>AgroLucro</h1>
+        <p>Sistema de Controle Financeiro Rural</p>
+    </header>
+
+    <!-- Menu principal -->
+    <nav>
+        <a href="../dashboard/dashboard.html">Início</a>
+        <a href="../cadastro/cadastro.html">Cadastro</a>
+        <a href="../movimentacao/movimentacao.html">Movimentações</a>
+        <a href="../historico/historico.html">Histórico</a>
+        <a href="../graficos/graficos.html">Gráficos</a>
+        <a href="../relatorios/relatorios.html">Relatórios</a>
+        <a href="../visao-geral/visao-geral.html">Visão Geral</a>
+        <a href="../planejamento/planejamento.html">Planejamento Rural</a>
+        <a href="../configuracoes/configuracoes.html">Configurações</a>
+        <a href="../login/login.html">Sair</a>
+    </nav>
+
+    <!-- Conteudo principal -->
+    <main>
+
+        <h2>Planejamento Rural</h2>
+
+        <p>
+            Organização de materiais, insumos e
+            investimentos futuros da propriedade.
+        </p>
+
+        <!-- Indicadores demonstrativos -->
+        <section class="resumo">
+
+            <div class="caixa">
+                <h3>Itens Planejados</h3>
+                <p>3</p>
+            </div>
+
+            <div class="caixa">
+                <h3>Investimento Previsto</h3>
+                <p>R$ 2.800,00</p>
+            </div>
+
+            <div class="caixa">
+                <h3>Itens Comprados</h3>
+                <p>1</p>
+            </div>
+
+        </section>
+
+        <!-- Formulario demonstrativo -->
+        <section class="formulario">
+
+            <h3>Novo Planejamento</h3>
+
+            <form>
+
+                <label for="nome">Nome do material:</label>
+                <input type="text" id="nome"
+                       placeholder="Ex.: Sementes de milho">
+
+                <label for="categoria">Categoria:</label>
+                <select id="categoria">
+                    <option>Sementes</option>
+                    <option>Fertilizantes</option>
+                    <option>Defensivos</option>
+                    <option>Equipamentos</option>
+                    <option>Manutenção</option>
+                    <option>Outros</option>
+                </select>
+
+                <label for="quantidade">Quantidade:</label>
+                <input type="number" id="quantidade"
+                       min="1" placeholder="Digite a quantidade">
+
+                <label for="unidade">Unidade:</label>
+                <select id="unidade">
+                    <option>Unidade</option>
+                    <option>Saco</option>
+                    <option>Kg</option>
+                    <option>Litro</option>
+                    <option>Serviço</option>
+                </select>
+
+                <label for="valor">Valor unitário (R$):</label>
+                <input type="number" id="valor"
+                       min="0" step="0.01"
+                       placeholder="0,00">
+
+                <label for="data">Data prevista:</label>
+                <input type="date" id="data">
+
+                <label for="situacao">Situação:</label>
+                <select id="situacao">
+                    <option>Planejado</option>
+                    <option>Comprado</option>
+                </select>
+
+                <!-- Botao demonstrativo -->
+                <button type="button">
+                    Adicionar ao Planejamento
+                </button>
+
+            </form>
+
+
+        </section>
+
+        <!-- Tabela de materiais -->
+        <section>
+
+            <h3>Materiais e Investimentos</h3>
+
+            <div class="tabela">
+                <table>
+
+                    <thead>
+                        <tr>
+                            <th>Material</th>
+                            <th>Categoria</th>
+                            <th>Quantidade</th>
+                            <th>Valor Total</th>
+                            <th>Data Prevista</th>
+                            <th>Situação</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+
+                        <tr>
+                            <td>Sementes de milho</td>
+                            <td>Sementes</td>
+                            <td>10 sacos</td>
+                            <td>R$ 1.200,00</td>
+                            <td>20/11/2026</td>
+                            <td class="planejado">Planejado</td>
+                        </tr>
+
+                        <tr>
+                            <td>Fertilizante</td>
+                            <td>Fertilizantes</td>
+                            <td>5 sacos</td>
+                            <td>R$ 1.000,00</td>
+                            <td>25/11/2026</td>
+                            <td class="planejado">Planejado</td>
+                        </tr>
+
+                        <tr>
+                            <td>Manutenção de equipamento</td>
+                            <td>Manutenção</td>
+                            <td>1 serviço</td>
+                            <td>R$ 600,00</td>
+                            <td>30/11/2026</td>
+                            <td class="planejado">Planejado</td>
+                        </tr>
+
+                        <tr>
+                            <td>Luvas de proteção</td>
+                            <td>Equipamentos</td>
+                            <td>5 unidades</td>
+                            <td>R$ 150,00</td>
+                            <td>12/11/2026</td>
+                            <td class="comprado">Comprado</td>
+                        </tr>
+
+                    </tbody>
+
+                </table>
+            </div>
+
+        </section>
+
+        <!-- Explicacao -->
+        <section class="observacao">
+
+            <h3>Importância do Planejamento</h3>
+
+            <p>
+                O planejamento permite organizar
+                antecipadamente os materiais necessários
+                para as atividades rurais.
+            </p>
+
+            <p>
+                Com isso, o produtor pode estimar
+                investimentos e identificar suas
+                necessidades futuras.
+            </p>
+
+            <p>
+                Nesta versão, os dados são apenas
+                exemplos inseridos no HTML.
+            </p>
+
+        </section>
+
+    </main>
+
+    <!-- Rodape -->
+    <footer>
+        <p>AgroLucro - Projeto Acadêmico 2026</p>
+    </footer>
+
+</body>
+</html>

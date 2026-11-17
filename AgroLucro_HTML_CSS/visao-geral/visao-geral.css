@@ -1,0 +1,159 @@
+/* Configuracoes gerais */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #eeeeee;
+    margin: 0;
+}
+
+/* Cabecalho */
+header {
+    background-color: #287a45;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+
+/* Menu */
+nav {
+    background-color: #205c36;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    padding: 15px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    padding: 8px;
+}
+
+nav a:hover {
+    background-color: #287a45;
+}
+
+/* Conteudo principal */
+main {
+    background-color: white;
+    max-width: 1050px;
+    margin: 30px auto;
+    padding: 25px;
+    border-radius: 6px;
+}
+
+/* Titulos */
+h2, h3 {
+    color: #287a45;
+}
+
+/* Dados da propriedade */
+.propriedade {
+    background-color: #f7f7f7;
+    padding: 20px;
+    margin-top: 25px;
+    border: 1px solid #dddddd;
+}
+
+/* Indicadores */
+.indicadores {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-top: 25px;
+}
+
+/* Caixas */
+.caixa {
+    flex: 1;
+    min-width: 180px;
+    background-color: #f1f7f2;
+    border: 1px solid #cbdccd;
+    padding: 20px;
+    text-align: center;
+}
+
+.caixa p {
+    color: #205c36;
+    font-size: 22px;
+    font-weight: bold;
+}
+
+/* Situacao financeira */
+.situacao {
+    background-color: #f1f7f2;
+    padding: 20px;
+    margin-top: 25px;
+    border-left: 4px solid #287a45;
+}
+
+/* Texto de saldo positivo */
+.positivo {
+    color: #287a45;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+/* Area operacional */
+.operacional {
+    margin-top: 30px;
+}
+
+/* Organizacao das informacoes */
+.lista {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.lista div {
+    flex: 1;
+    min-width: 180px;
+    padding: 20px;
+    background-color: #f7f7f7;
+    border: 1px solid #dddddd;
+}
+
+.lista h4 {
+    color: #287a45;
+}
+
+/* Observacao */
+.observacao {
+    background-color: #f8f8f8;
+    padding: 20px;
+    margin-top: 30px;
+    border: 1px solid #dddddd;
+}
+
+/* Rodape */
+footer {
+    text-align: center;
+    padding: 20px;
+    color: #555555;
+}
+
+/* Responsividade */
+@media (max-width: 600px) {
+
+    main {
+        margin: 15px 10px;
+        padding: 15px;
+    }
+
+    .caixa {
+        min-width: 100%;
+    }
+
+    .lista div {
+        min-width: 100%;
+    }
+
+    nav a {
+        font-size: 13px;
+    }
+}

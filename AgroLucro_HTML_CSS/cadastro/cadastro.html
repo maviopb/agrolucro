@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <!-- Configuracoes da pagina -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Cadastro - AgroLucro</title>
+
+    <!-- Arquivo CSS -->
+    <link rel="stylesheet" href="cadastro.css">
+</head>
+
+<body>
+
+    <!-- Cabecalho -->
+    <header>
+        <h1>AgroLucro</h1>
+        <p>Sistema de Controle Financeiro Rural</p>
+    </header>
+
+    <!-- Menu principal -->
+    <nav>
+        <a href="../dashboard/dashboard.html">Início</a>
+        <a href="../cadastro/cadastro.html">Cadastro</a>
+        <a href="../movimentacao/movimentacao.html">Movimentações</a>
+        <a href="../historico/historico.html">Histórico</a>
+        <a href="../graficos/graficos.html">Gráficos</a>
+        <a href="../relatorios/relatorios.html">Relatórios</a>
+        <a href="../visao-geral/visao-geral.html">Visão Geral</a>
+        <a href="../planejamento/planejamento.html">Planejamento Rural</a>
+        <a href="../configuracoes/configuracoes.html">Configurações</a>
+        <a href="../login/login.html">Sair</a>
+    </nav>
+
+    <!-- Conteudo principal -->
+    <main>
+
+        <h2>Cadastro de Produtores</h2>
+
+        <p>
+            Esta página apresenta o formulário de cadastro
+            dos produtores e suas propriedades rurais.
+        </p>
+
+        <!-- Formulario demonstrativo -->
+        <section class="formulario">
+
+            <h3>Dados do Produtor</h3>
+
+            <form>
+
+                <label for="nome">Nome completo:</label>
+                <input type="text" id="nome"
+                       placeholder="Nome do produtor" required>
+
+                <label for="email">E-mail:</label>
+                <input type="email" id="email"
+                       placeholder="E-mail do produtor" required>
+
+                <label for="telefone">Telefone:</label>
+                <input type="tel" id="telefone"
+                       placeholder="(81) 99999-9999" required>
+
+                <label for="propriedade">Nome da propriedade:</label>
+                <input type="text" id="propriedade"
+                       placeholder="Nome da propriedade rural" required>
+
+                <!-- Botao sem envio de dados -->
+                <button type="button">
+                    Cadastrar Produtor
+                </button>
+
+            </form>
+
+
+        </section>
+
+        <!-- Tabela de exemplo -->
+        <section>
+
+            <h3>Produtores Cadastrados — Exemplo</h3>
+
+            <div class="tabela">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Nome</th>
+                            <th>E-mail</th>
+                            <th>Telefone</th>
+                            <th>Propriedade</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                        <tr>
+                            <td>João Silva</td>
+                            <td>joao@exemplo.com</td>
+                            <td>(81) 99999-1234</td>
+                            <td>Fazenda Boa Esperança</td>
+                        </tr>
+
+                        <tr>
+                            <td>Maria Oliveira</td>
+                            <td>maria@exemplo.com</td>
+                            <td>(81) 98888-5678</td>
+                            <td>Sítio Santa Luzia</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+        </section>
+
+    </main>
+
+    <!-- Rodape -->
+    <footer>
+        <p>AgroLucro - Projeto Acadêmico 2026</p>
+    </footer>
+
+</body>
+</html>

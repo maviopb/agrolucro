@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <!-- Configuracoes da pagina -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Relatórios - AgroLucro</title>
+
+    <!-- Arquivo CSS -->
+    <link rel="stylesheet" href="relatorios.css">
+</head>
+
+<body>
+
+    <!-- Cabecalho -->
+    <header>
+        <h1>AgroLucro</h1>
+        <p>Sistema de Controle Financeiro Rural</p>
+    </header>
+
+    <!-- Menu principal -->
+    <nav>
+        <a href="../dashboard/dashboard.html">Início</a>
+        <a href="../cadastro/cadastro.html">Cadastro</a>
+        <a href="../movimentacao/movimentacao.html">Movimentações</a>
+        <a href="../historico/historico.html">Histórico</a>
+        <a href="../graficos/graficos.html">Gráficos</a>
+        <a href="../relatorios/relatorios.html">Relatórios</a>
+        <a href="../visao-geral/visao-geral.html">Visão Geral</a>
+        <a href="../planejamento/planejamento.html">Planejamento Rural</a>
+        <a href="../configuracoes/configuracoes.html">Configurações</a>
+        <a href="../login/login.html">Sair</a>
+    </nav>
+
+    <!-- Conteudo principal -->
+    <main>
+
+        <h2>Relatório Financeiro</h2>
+
+        <p>
+            Demonstrativo das receitas e despesas
+            de uma propriedade rural.
+        </p>
+
+        <!-- Identificacao do relatorio -->
+        <section class="identificacao">
+
+            <h3>Informações do Relatório</h3>
+
+            <p>
+                <strong>Propriedade:</strong>
+                Fazenda Boa Esperança
+            </p>
+
+            <p>
+                <strong>Responsável:</strong>
+                João Silva
+            </p>
+
+            <p>
+                <strong>Período:</strong>
+                Novembro de 2026
+            </p>
+
+        </section>
+
+        <!-- Resumo financeiro -->
+        <section class="resumo">
+
+            <div class="caixa">
+                <h3>Total de Receitas</h3>
+                <p>R$ 5.000,00</p>
+            </div>
+
+            <div class="caixa">
+                <h3>Total de Despesas</h3>
+                <p>R$ 1.500,00</p>
+            </div>
+
+            <div class="caixa">
+                <h3>Saldo Final</h3>
+                <p>R$ 3.500,00</p>
+            </div>
+
+        </section>
+
+        <!-- Detalhamento das movimentacoes -->
+        <section>
+
+            <h3>Detalhamento Financeiro</h3>
+
+            <div class="tabela">
+
+                <table>
+
+                    <thead>
+                        <tr>
+                            <th>Data</th>
+                            <th>Descrição</th>
+                            <th>Tipo</th>
+                            <th>Valor</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+
+                        <tr>
+                            <td>05/11/2026</td>
+                            <td>Venda de milho</td>
+                            <td class="receita">Receita</td>
+                            <td>R$ 5.000,00</td>
+                        </tr>
+
+                        <tr>
+                            <td>08/11/2026</td>
+                            <td>Compra de sementes</td>
+                            <td class="despesa">Despesa</td>
+                            <td>R$ 1.200,00</td>
+                        </tr>
+
+                        <tr>
+                            <td>10/11/2026</td>
+                            <td>Combustível</td>
+                            <td class="despesa">Despesa</td>
+                            <td>R$ 300,00</td>
+                        </tr>
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        </section>
+
+        <!-- Conclusao do relatorio -->
+        <section class="conclusao">
+
+            <h3>Análise do Período</h3>
+
+            <p>
+                Durante o período apresentado,
+                a propriedade obteve receitas de
+                R$ 5.000,00 e despesas de R$ 1.500,00.
+            </p>
+
+            <p>
+                O saldo financeiro foi positivo,
+                totalizando R$ 3.500,00.
+            </p>
+
+            <p>
+                As despesas representam 30% das receitas.
+            </p>
+
+        </section>
+
+
+    </main>
+
+    <!-- Rodape -->
+    <footer>
+        <p>AgroLucro - Projeto Acadêmico 2026</p>
+    </footer>
+
+</body>
+</html>
